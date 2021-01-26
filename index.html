@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Used fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Outline&family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap"
+        rel="stylesheet">
+    <!-- App fonts -->
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/image.css">
+    <link rel="stylesheet" href="./styles/aside.css">
+    <!-- Title -->
+    <title>Generador de memes</title>
+</head>
+
+<body>
+    <section class="main-section display-section">
+        <!-- HEADER -->
+        <header class="secondary-section main-header">
+            <h1 class="main-title">Generador de Memes</h1>
+            <button class="main-button" id="imageButton">
+                <i class="far fa-file-image"></i>
+                <p class="main-button-text">Imagen</p>
+            </button>
+            <button class="main-button" id="textButton">
+                <i class="fas fa-font"></i>
+                <p class="main-button-text">Texto</p>
+            </button>
+            <button class="main-button" id="lightModeButton">
+                <i class="far fa-lightbulb"></i>
+                <p class="main-button-text">Modo oscuro</p>
+            </button>
+        </header>
+        <!-- IMAGE -->
+        <main class="secondary-section main-main">
+            <section class="image-in-progress" id="imageInProgress">
+                <article class="image-section image-text-container" id="imageTopTextContainer">
+                    <p class="image-text" id="imageTopText">TOP TEXT</p>
+                </article>
+                <article class="image-section image-per-se" id="imagePerSe"></article>
+                <article class="image-section image-text-container" id="imageBottomTextContainer">
+                    <p class="image-text" id="imageBottomText">BOTTOM TEXT</p>
+                </article>
+            </section>
+        <!-- DOWNLOAD BUTTON -->
+            <button class="download" id="download">
+                <i class="fas fa-download"></i>
+                <p class="download-text">Descargar meme</p>
+            </button>
+        </main>
+    </section>
+    <!-- ASIDE -->
+    <aside class="main-section aside-section">
+        <!-- IMAGE SETTINGS -->
+        <form action="" id="imageForm" class="aside-form image-form">
+            <fieldset class="aside-form-container">
+                <legend>IMAGEN</legend>
+                <article class="input-container">
+                    <label class="input-name aside-subtitle" for="imageUrl">URL</label>
+                    <input type="text" id="imageUrl">
+                </article>
+                <article class="input-container">
+                    <label class="input-name aside-subtitle" for="inputBackground">Fondo</label>
+                    <input type="color" class="inputBackground" id="inputBackground">
+                    <label class="input-name" for="backgroundFilter"></label>
+                    <select name="" class="background-filter" id="backgroundFilter">
+                        <option value="none">Ninguno</option>
+                        <option value="lighten">Aclarar</option>
+                        <option value="dark">Oscurecer</option>
+                        <option value="difference">Diferencia</option>
+                        <option value="luminocity">Luminosidad</option>
+                        <option value="multiply">Multiplicar</option>
+                    </select>
+                </article>
+                <section class="range-inputs">
+                    <p class="input-name aside-subtitle">Filtros</p>
+                    <article class="input-container">
+                        <label class="range-name" for="brillo">Brillo</label>
+                        <input type="range" id="brillo">
+                    </article>
+                    <article class="input-container">
+                        <label class="range-name" for="opacity">Opacidad</label>
+                        <input type="range" id="opacity">
+                    </article>
+                    <article class="input-container">
+                        <label class="range-name" for="contrast">Contraste</label>
+                        <input type="range" id="contrast">
+                    </article>
+                    <article class="input-container">
+                        <label class="range-name" for="unfocus">Desenfoque</label>
+                        <input type="range" id="unfocus">
+                    </article>
+                    <article class="input-container">
+                        <label class="range-name" for="greyScale">Escala de grises</label>
+                        <input type="range" id="greyScale">
+                    </article>
+                    <article class="input-container">
+                        <label class="range-name" for="sepia">Sepia</label>
+                        <input type="range" id="sepia">
+                    </article>
+                    <article class="input-container">
+                        <label class="range-name" for="hue">HUE</label>
+                        <input type="range" id="hue">
+                    </article>
+                    <article class="input-container">
+                        <label class="range-name" for="saturation">Saturación</label>
+                        <input type="range" id="saturation">
+                    </article>
+                    <article class="input-container">
+                        <label class="range-name" for="negative">Negativo</label>
+                        <input type="range" id="negative">
+                    </article>
+                    <button class="undo-filters" id="undoFilters">Reestablecer filtros</button>
+                </section>
+
+            </fieldset>
+        </form>
+        <!-- TEXT SETTINGS -->
+        <form action="" id="textForm" class="aside-form text-form hide">
+            <fieldset class="aside-form-container">
+                <legend>TEXTO</legend>
+                <article class="input-container">
+                    <label class="input-name aside-subtitle" for="inputTopText">Superior</label>
+                    <input type="text" id="inputTopText" placeholder="TOP TEXT">
+                </article>
+                <article class="input-container complementary-option">
+                    <input type="checkbox" id="withTopText">
+                    <label class="input-name" for="withTopText">Sin texto superior</label>
+                </article>
+                <article class="input-container">
+                    <label class="input-name aside-subtitle" for="inputBottomText">Inferior</label>
+                    <input type="text" id="inputBottomText" placeholder="TOP TEXT">
+                </article>
+                <article class="input-container complementary-option">
+                    <input type="checkbox" id="withBottomtext">
+                    <label class="input-name" for="withBottomtext">Sin texto inferior</label>
+                </article>
+                <section class="font-inputs">
+                    <article class="input-container">
+                        <label class="input-name aside-subtitle" for="fontName">Fuente</label>
+                        <select name="fontName" id="fontName">
+                            <option value="arial">Arial</option>
+                            <option value="arial-black">Arial Black</option>
+                            <option value="american-typewriter">American Typewriter</option>
+                            <option value="andale-mono">Andale Mono</option>
+                            <option value="comic-sans">Comic Sans MS</option>
+                            <option value="helvetica">Helvética</option>
+                            <option value="impact">Impact</option>
+                            <option value="verdana">Verdana</option>
+                            <option value="times-new-roman">Times New Roman</option>
+                        </select>
+                    </article>
+                    <article class="input-container">
+                        <label class="input-name" for="fontSize"></label>
+                        <input type="number" id="fontSize">
+                    </article>
+                    <button type="button" class="text-align-button" id="textAlignLeft">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button type="button" class="text-align-button" id="textAlignCenter">
+                        <i class="fas fa-align-center"></i>
+                    </button>
+                    <button type="button" class="text-align-button" id="textAlignRight">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+                </section>
+                <article class="input-container">
+                    <label class="input-name aside-subtitle" for="fontColor">Color</label>
+                    <input type="text" id="fontColor">
+                </article>
+                <article class="input-container">
+                    <label class="input-name" for="fontBackground">Fondo</label>
+                    <input type="color" id="fontBackground">
+                </article>
+                <article class="input-container complementary-option">
+                    <input type="checkbox" id="noFontBackground">
+                    <label class="input-name" for="noFontBackground">Fondo transparente</label>
+                </article>
+                <article class="input-container">
+                    <label class="input-name aside-subtitle" for="fontBorder">Contorno</label>
+                    <input type="range" id="fontBorder">
+                </article>
+                <article class="input-container">
+                    <label class="input-name aside-subtitle" for="fontSpace">Espaciado</label>
+                    <input type="number" id="fontSpace">
+                </article>
+                <article class="input-container">
+                    <label class="input-name aside-subtitle" for="fontInter">Interlineado</label>
+                    <select name="fontInter" id="fontInter">
+                        <option value="0.8">0.8</option>
+                        <option value="1">1</option>
+                        <option value="1.2">1.2</option>
+                        <option value="1.5">1.5</option>
+                        <option value="2">2</option>
+                        <option value="2.5">2.5</option>
+                    </select>
+                </article>
+            </fieldset>
+        </form>
+    </aside>
+
+    <!-- Script iconos -->
+    <script src="https://kit.fontawesome.com/a484224e5b.js" crossorigin="anonymous"></script>
+    <!-- App script -->
+    <script src="./main.js"></script>
+</body>
+
+</html>

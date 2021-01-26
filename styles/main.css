@@ -1,0 +1,133 @@
+/* Variables */
+
+:root {
+    --lightBackground: rgb(59, 59, 141);
+    --mediumBackground: rgb(28, 28, 83);
+    --darkBackground: rgb(9, 9, 36);
+    --fontColor: rgb(250, 246, 246);
+}
+
+/* Common styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: var(--fontColor);
+}
+
+.download,
+.main-button {
+    display: flex;
+    border: none;
+    align-items: center;
+}
+
+.download>i,
+.main-button>i {
+    margin-right: 0.75em;
+}
+
+fieldset {
+    border: none;
+}
+
+
+
+/* Page styles and organization */
+
+html,
+body {
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+/* Classes to use in JS */
+
+.hide {
+    display: none;
+}
+
+/* Sections styles */
+
+.main-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.secondary-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    align-content: space-evenly;
+}
+
+.display-section {
+    flex-grow: 10;
+}
+
+/* Header styles */
+
+.main-header {
+    background-color: var(--darkBackground);
+    color: var(--fontColor);
+    flex-grow: 1;
+    padding: 1em;
+}
+
+.main-title {
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 2.2em;
+    font-family: 'Bungee Outline';
+    margin-bottom: 0.2em;
+}
+
+.main-button {
+    background-color: inherit;
+    margin: 0 1em;
+    padding: 0.5em 0.75em;
+    border-radius: 20px;
+    border: 5px double rgba(0, 0, 0, 0);
+}
+
+.main-button:hover,
+.main-button:active,
+.main-button:focus {
+    background-color: var(--lightBackground);
+    border: 5px double rgba(250, 246, 246, 0.5);
+}
+
+/* Aside styles */
+
+.aside-section {
+    background-color: var(--mediumBackground);
+    flex-grow: 1;
+    font-family: 'Merriweather Sans';
+}
+
+.aside-form {
+    height: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.text-form{
+    display: none;
+}

@@ -1,0 +1,213 @@
+/* General aside form styles */
+
+legend {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 1em auto 2em auto;
+}
+
+.input-name,
+.range-name {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.83em;
+    margin-bottom: 0.45em;
+}
+
+.aside-subtitle {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9em;
+    margin: 0.4em 0 0.75em;
+}
+
+input,
+select {
+    background-color: var(--darkBackground);
+    border: none;
+}
+
+select {
+    position: relative;
+    appearance: none;
+    padding: 0.65em 0.3em;
+}
+
+
+input[type='text'] {
+    padding: 0.75em;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.range-inputs > .input-container{
+    margin-bottom: 0.5rem;
+}
+.range-inputs > .input-container:last-of-type{
+    margin-bottom: 1rem;
+}
+
+
+
+
+/* Image form styles */
+
+.image-form>.aside-form-container>.input-container:nth-of-type(2) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.image-form .input-container:nth-of-type(2) .input-name:first-of-type {
+    width: 100%;
+}
+
+.image-form .background-filter {
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 1 40%;
+    margin-left: 10%;
+}
+
+.inputBackground {
+    border: 1px double var(--lightBackground);
+    flex: 1 1 40%;
+}
+
+.undo-filters {
+    text-transform: uppercase;
+    background-color: var(--lightBackground);
+    border: none;
+    padding: 0.75em 1.2em;
+    border-radius: 4px;
+}
+
+/* Range inputs styles - styled in --> http://danielstern.ca/range.css/#/  */
+
+input[type=range] {
+    width: 100%;
+    margin: 0.2rem 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    background: #3b3b8d;
+    border: 0;
+    border-radius: 9.7px;
+    width: 100%;
+    height: 0.538rem;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    margin-top: -0.2rem;
+    width: 1rem;
+    height: 0.85rem;
+    background: #ffffff;
+    border: 2px solid rgba(49, 0, 0, 0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #c3c3e6;
+}
+
+input[type=range]::-moz-range-track {
+    background: #3b3b8d;
+    border: 0;
+    border-radius: 9.7px;
+    width: 100%;
+    height: 0.538rem;
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 1rem;
+    height: 0.85rem;
+    background: #ffffff;
+    border: 2px solid rgba(49, 0, 0, 0.5);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    border-width: 4.2px 0;
+    color: transparent;
+    width: 100%;
+    height: 0.538rem;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #000000;
+    border: 0;
+    border-radius: 19.4px;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: #3b3b8d;
+    border: 0;
+    border-radius: 19.4px;
+}
+
+input[type=range]::-ms-thumb {
+    width: 1rem;
+    height: 0.85rem;
+    background: #ffffff;
+    border: 2px solid rgba(49, 0, 0, 0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0px;
+    /*Needed to keep the Edge thumb centred*/
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: #3b3b8d;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: #c3c3e6;
+}
+
+/*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out
+how to remove the virtical space around the range input in IE*/
+@supports (-ms-ime-align:auto) {
+
+    /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+    input[type=range] {
+        margin: 0;
+        /*Edge starts the margin from the thumb, not the track as other browsers do*/
+    }
+}
+
+
+/* Text form styles */
+
+.text-form .complementary-option {
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.text-form .input-container:nth-of-type(1),
+.text-form .input-container:nth-of-type(3),
+.text-form .input-container:nth-of-type(6) {
+    margin-bottom: 0.55em;
+}
+
+.text-form .complementary-option>label {
+    margin-left: 0.5em;
+    text-transform: initial;
+}
