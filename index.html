@@ -62,14 +62,14 @@
             <fieldset class="aside-form-container">
                 <legend>IMAGEN</legend>
                 <article class="input-container">
-                    <label class="input-name aside-subtitle" for="imageUrl">URL</label>
+                    <label class="aside-subtitle" for="imageUrl">URL</label>
                     <input type="text" id="imageUrl">
                 </article>
                 <article class="input-container">
                     <label class="input-name aside-subtitle" for="inputBackground">Fondo</label>
                     <input type="color" class="inputBackground" id="inputBackground">
                     <label class="input-name" for="backgroundFilter"></label>
-                    <select name="" class="background-filter" id="backgroundFilter">
+                    <select name="background-filter" class="background-filter" id="backgroundFilter">
                         <option value="none">Ninguno</option>
                         <option value="lighten">Aclarar</option>
                         <option value="dark">Oscurecer</option>
@@ -79,7 +79,7 @@
                     </select>
                 </article>
                 <section class="range-inputs">
-                    <p class="input-name aside-subtitle">Filtros</p>
+                    <p class="aside-subtitle">Filtros</p>
                     <article class="input-container">
                         <label class="range-name" for="brillo">Brillo</label>
                         <input type="range" id="brillo">
@@ -126,7 +126,7 @@
             <fieldset class="aside-form-container">
                 <legend>TEXTO</legend>
                 <article class="input-container">
-                    <label class="input-name aside-subtitle" for="inputTopText">Superior</label>
+                    <label class="aside-subtitle" for="inputTopText">Superior</label>
                     <input type="text" id="inputTopText" placeholder="TOP TEXT">
                 </article>
                 <article class="input-container complementary-option">
@@ -134,8 +134,8 @@
                     <label class="input-name" for="withTopText">Sin texto superior</label>
                 </article>
                 <article class="input-container">
-                    <label class="input-name aside-subtitle" for="inputBottomText">Inferior</label>
-                    <input type="text" id="inputBottomText" placeholder="TOP TEXT">
+                    <label class="aside-subtitle" for="inputBottomText">Inferior</label>
+                    <input type="text" id="inputBottomText" placeholder="BOTTOM TEXT">
                 </article>
                 <article class="input-container complementary-option">
                     <input type="checkbox" id="withBottomtext">
@@ -143,7 +143,7 @@
                 </article>
                 <section class="font-inputs">
                     <article class="input-container">
-                        <label class="input-name aside-subtitle" for="fontName">Fuente</label>
+                        <label class="aside-subtitle" for="fontName">Fuente</label>
                         <select name="fontName" id="fontName">
                             <option value="arial">Arial</option>
                             <option value="arial-black">Arial Black</option>
@@ -170,28 +170,32 @@
                         <i class="fas fa-align-right"></i>
                     </button>
                 </section>
-                <article class="input-container">
-                    <label class="input-name aside-subtitle" for="fontColor">Color</label>
-                    <input type="text" id="fontColor">
+                <section class="font-color-inputs">
+                    <article class="input-container">
+                        <label class="aside-subtitle" for="fontColor">Color</label>
+                        <input type="color" id="fontColor">
+                    </article>
+                    <article class="input-container">
+                        <label class="aside-subtitle" for="fontBackground">Fondo</label>
+                        <input type="color" id="fontBackground">
+                    </article>
+                    <article class="input-container complementary-option">
+                        <input type="checkbox" id="noFontBackground">
+                        <label class="input-name" for="noFontBackground">Fondo transparente</label>
+                    </article>
+                </section>
+                <article class="input-container font-shadow-buttons">
+                    <p class="aside-subtitle">Contorno</p>
+                    <button type="button" class="font-shadow-button" id="fontBorderNone">Ninguno</button>
+                    <button type="button" class="font-shadow-button" id="fontBorderLight">Claro</button>
+                    <button type="button" class="font-shadow-button" id="fontBorderDark">Oscuro</button>
                 </article>
                 <article class="input-container">
-                    <label class="input-name" for="fontBackground">Fondo</label>
-                    <input type="color" id="fontBackground">
-                </article>
-                <article class="input-container complementary-option">
-                    <input type="checkbox" id="noFontBackground">
-                    <label class="input-name" for="noFontBackground">Fondo transparente</label>
-                </article>
-                <article class="input-container">
-                    <label class="input-name aside-subtitle" for="fontBorder">Contorno</label>
-                    <input type="range" id="fontBorder">
-                </article>
-                <article class="input-container">
-                    <label class="input-name aside-subtitle" for="fontSpace">Espaciado</label>
+                    <label class="aside-subtitle" for="fontSpace">Espaciado</label>
                     <input type="number" id="fontSpace">
                 </article>
                 <article class="input-container">
-                    <label class="input-name aside-subtitle" for="fontInter">Interlineado</label>
+                    <label class="aside-subtitle" for="fontInter">Interlineado</label>
                     <select name="fontInter" id="fontInter">
                         <option value="0.8">0.8</option>
                         <option value="1">1</option>

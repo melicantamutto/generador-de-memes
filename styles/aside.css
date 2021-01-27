@@ -1,5 +1,9 @@
 /* General aside form styles */
 
+.aside-form-container {
+    width: 80%;
+}
+
 legend {
     text-align: center;
     font-size: 1.5em;
@@ -23,16 +27,26 @@ legend {
 
 input,
 select {
-    background-color: var(--darkBackground);
+    background-color: var(--lightBackground);
     border: none;
+    padding: 0.65em 0.3em;
+    transition: all 0.2s;
 }
 
 select {
     position: relative;
     appearance: none;
-    padding: 0.65em 0.3em;
 }
 
+input[type="color"] {
+    border: 5px double var(--lightBackground);
+    height: 2.375rem;
+}
+
+input[type="color"],
+.range-inputs>.input-container>input {
+    padding: 0;
+}
 
 input[type='text'] {
     padding: 0.75em;
@@ -44,46 +58,11 @@ input[type='text'] {
     margin-bottom: 1rem;
 }
 
-.range-inputs > .input-container{
-    margin-bottom: 0.5rem;
-}
-.range-inputs > .input-container:last-of-type{
-    margin-bottom: 1rem;
-}
-
-
-
-
-/* Image form styles */
-
-.image-form>.aside-form-container>.input-container:nth-of-type(2) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.image-form .input-container:nth-of-type(2) .input-name:first-of-type {
-    width: 100%;
-}
-
-.image-form .background-filter {
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex: 1 1 40%;
-    margin-left: 10%;
-}
-
-.inputBackground {
-    border: 1px double var(--lightBackground);
-    flex: 1 1 40%;
-}
-
-.undo-filters {
-    text-transform: uppercase;
+.aside-form button {
     background-color: var(--lightBackground);
     border: none;
-    padding: 0.75em 1.2em;
     border-radius: 4px;
+    transition: all 0.2s;
 }
 
 /* Range inputs styles - styled in --> http://danielstern.ca/range.css/#/  */
@@ -193,6 +172,41 @@ how to remove the virtical space around the range input in IE*/
     }
 }
 
+/* Image form styles */
+
+.image-form>.aside-form-container>.input-container:nth-of-type(2) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.image-form .input-container:nth-of-type(2) .input-name:first-of-type {
+    width: 100%;
+}
+
+.image-form .background-filter {
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 1 40%;
+    margin-left: 10%;
+}
+
+.inputBackground {
+    flex: 1 1 40%;
+}
+
+.range-inputs>.input-container {
+    margin-bottom: 0.5rem;
+}
+
+.range-inputs>.input-container:last-of-type {
+    margin-bottom: 1rem;
+}
+
+.undo-filters {
+    text-transform: uppercase;
+    padding: 0.75em 1.2em;
+}
 
 /* Text form styles */
 
@@ -210,4 +224,84 @@ how to remove the virtical space around the range input in IE*/
 .text-form .complementary-option>label {
     margin-left: 0.5em;
     text-transform: initial;
+}
+
+.font-inputs,
+.font-color-inputs,
+.font-shadow-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.font-inputs>.input-container:nth-of-type(1) {
+    flex: 1 1 100%;
+}
+
+.font-inputs>.input-container:nth-of-type(2) {
+    width: 30%;
+    flex: 1 1 30%;
+    margin-right: 2%;
+}
+
+.font-inputs>.text-align-button{
+    margin-bottom: 0.6rem;
+}
+
+.font-inputs>.text-align-button,
+.font-shadow-buttons > .font-shadow-button{
+    flex: 1 2 10%;
+    margin-right: 2%;
+    padding: 0.65em;
+}
+
+.font-inputs:last-child,
+.font-shadow-buttons:last-child {
+    margin-right: 0;
+}
+
+.font-color-inputs > .input-container{
+    width: 40%;
+    flex: 1 1 40%;
+    margin-right: 2%;
+}
+.font-color-inputs > .input-container:nth-of-type(-n+2)> input{
+    width: 100%;
+}
+
+
+.font-color-inputs > .input-container:nth-of-type(2) {
+    margin-right: 0;
+    margin-top: 0.43rem;
+}
+
+.font-color-inputs > .complementary-option{
+    flex: 1 1 100%;
+}
+
+.font-shadow-buttons > p{
+    flex: 1 1 100%;
+}
+
+
+/* Hovers */
+
+input:hover,
+select:hover,
+.aside-form-container button:hover,
+input:focus,
+select:focus {
+    background-color: var(--lighterBackground);
+}
+.range-inputs > .input-container > input:hover,
+.range-inputs > .input-container > input:focus{
+    background-color: inherit;
+}
+
+input[type="color"]:hover,
+input[type="color"]:focus{
+    border: 3px double var(--darkBackground);
+
 }
