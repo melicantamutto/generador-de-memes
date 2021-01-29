@@ -34,7 +34,9 @@ fieldset {
     border: none;
 }
 
-
+.light-mode-checkbox{
+    display: none;
+}
 
 /* Page styles and organization */
 

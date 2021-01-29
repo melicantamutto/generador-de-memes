@@ -24,31 +24,35 @@
         <!-- HEADER -->
         <header class="secondary-section main-header">
             <h1 class="main-title">Generador de Memes</h1>
-            <button class="main-button" id="imageButton">
+            <button class="main-button" id="image-button">
                 <i class="far fa-file-image"></i>
                 <p class="main-button-text">Imagen</p>
             </button>
-            <button class="main-button" id="textButton">
+            <button class="main-button" id="text-button">
                 <i class="fas fa-font"></i>
                 <p class="main-button-text">Texto</p>
             </button>
-            <button class="main-button" id="lightModeButton">
-                <i class="far fa-lightbulb"></i>
-                <p class="main-button-text">Modo oscuro</p>
-            </button>
+            <section class="main-button-container">
+                <input type="checkbox" name="lightModeButton" class="light-mode-checkbox" id="light-mode-button"
+                    checked="checked">
+                <label for="lightModeButton" class="main-button">
+                    <i class="far fa-lightbulb"></i>
+                    <p class="main-button-text">Modo oscuro</p>
+                </label>
+            </section>
         </header>
         <!-- IMAGE -->
         <main class="secondary-section main-main">
-            <section class="image-in-progress" id="imageInProgress">
-                <article class="image-section image-text-container" id="imageTopTextContainer">
-                    <p class="image-text" id="imageTopText">TOP TEXT</p>
+            <section class="image-in-progress" id="image-in-progress">
+                <article class="image-section image-text-container" id="image-top-text-container">
+                    <p class="image-text" id="image-top-text">TOP TEXT</p>
                 </article>
-                <article class="image-section image-per-se" id="imagePerSe"></article>
-                <article class="image-section image-text-container" id="imageBottomTextContainer">
-                    <p class="image-text" id="imageBottomText">BOTTOM TEXT</p>
+                <article class="image-section image-per-se" id="image-per-se"></article>
+                <article class="image-section image-text-container" id="image-bottom-text-container">
+                    <p class="image-text" id="image-bottom-text">BOTTOM TEXT</p>
                 </article>
             </section>
-        <!-- DOWNLOAD BUTTON -->
+            <!-- DOWNLOAD BUTTON -->
             <button class="download" id="download">
                 <i class="fas fa-download"></i>
                 <p class="download-text">Descargar meme</p>
@@ -58,18 +62,18 @@
     <!-- ASIDE -->
     <aside class="main-section aside-section">
         <!-- IMAGE SETTINGS -->
-        <form action="" id="imageForm" class="aside-form image-form">
+        <form action="" id="image-form" class="aside-form image-form">
             <fieldset class="aside-form-container">
                 <legend>IMAGEN</legend>
                 <article class="input-container">
                     <label class="aside-subtitle" for="imageUrl">URL</label>
-                    <input type="text" id="imageUrl">
+                    <input type="text" id="image-url">
                 </article>
                 <article class="input-container">
                     <label class="input-name aside-subtitle" for="inputBackground">Fondo</label>
-                    <input type="color" class="inputBackground" id="inputBackground">
+                    <input type="color" class="inputBackground" id="input-background">
                     <label class="input-name" for="backgroundFilter"></label>
-                    <select name="background-filter" class="background-filter" id="backgroundFilter">
+                    <select name="background-filter" class="background-filter" id="background-filter">
                         <option value="none">Ninguno</option>
                         <option value="lighten">Aclarar</option>
                         <option value="dark">Oscurecer</option>
@@ -98,7 +102,7 @@
                     </article>
                     <article class="input-container">
                         <label class="range-name" for="greyScale">Escala de grises</label>
-                        <input type="range" id="greyScale">
+                        <input type="range" id="grey-scale">
                     </article>
                     <article class="input-container">
                         <label class="range-name" for="sepia">Sepia</label>
@@ -116,35 +120,35 @@
                         <label class="range-name" for="negative">Negativo</label>
                         <input type="range" id="negative">
                     </article>
-                    <button class="undo-filters" id="undoFilters">Reestablecer filtros</button>
+                    <button class="undo-filters" id="undo-filters">Reestablecer filtros</button>
                 </section>
 
             </fieldset>
         </form>
         <!-- TEXT SETTINGS -->
-        <form action="" id="textForm" class="aside-form text-form hide">
+        <form action="" id="text-form" class="aside-form text-form hide">
             <fieldset class="aside-form-container">
                 <legend>TEXTO</legend>
                 <article class="input-container">
                     <label class="aside-subtitle" for="inputTopText">Superior</label>
-                    <input type="text" id="inputTopText" placeholder="TOP TEXT">
+                    <input type="text" id="input-top-text" placeholder="TOP TEXT">
                 </article>
                 <article class="input-container complementary-option">
-                    <input type="checkbox" id="withTopText">
+                    <input type="checkbox" id="with-top-text">
                     <label class="input-name" for="withTopText">Sin texto superior</label>
                 </article>
                 <article class="input-container">
                     <label class="aside-subtitle" for="inputBottomText">Inferior</label>
-                    <input type="text" id="inputBottomText" placeholder="BOTTOM TEXT">
+                    <input type="text" id="input-bottom-text" placeholder="BOTTOM TEXT">
                 </article>
                 <article class="input-container complementary-option">
-                    <input type="checkbox" id="withBottomtext">
+                    <input type="checkbox" id="with-bottom-text">
                     <label class="input-name" for="withBottomtext">Sin texto inferior</label>
                 </article>
                 <section class="font-inputs">
                     <article class="input-container">
                         <label class="aside-subtitle" for="fontName">Fuente</label>
-                        <select name="fontName" id="fontName">
+                        <select name="fontName" id="font-name">
                             <option value="arial">Arial</option>
                             <option value="arial-black">Arial Black</option>
                             <option value="american-typewriter">American Typewriter</option>
@@ -158,45 +162,45 @@
                     </article>
                     <article class="input-container">
                         <label class="input-name" for="fontSize"></label>
-                        <input type="number" id="fontSize">
+                        <input type="number" id="font-size">
                     </article>
-                    <button type="button" class="text-align-button" id="textAlignLeft">
+                    <button type="button" class="text-align-button" id="text-align-left">
                         <i class="fas fa-align-left"></i>
                     </button>
-                    <button type="button" class="text-align-button" id="textAlignCenter">
+                    <button type="button" class="text-align-button" id="text-align-center">
                         <i class="fas fa-align-center"></i>
                     </button>
-                    <button type="button" class="text-align-button" id="textAlignRight">
+                    <button type="button" class="text-align-button" id="text-align-right">
                         <i class="fas fa-align-right"></i>
                     </button>
                 </section>
                 <section class="font-color-inputs">
                     <article class="input-container">
                         <label class="aside-subtitle" for="fontColor">Color</label>
-                        <input type="color" id="fontColor">
+                        <input type="color" id="font-color">
                     </article>
                     <article class="input-container">
                         <label class="aside-subtitle" for="fontBackground">Fondo</label>
-                        <input type="color" id="fontBackground">
+                        <input type="color" id="font-background">
                     </article>
                     <article class="input-container complementary-option">
-                        <input type="checkbox" id="noFontBackground">
+                        <input type="checkbox" id="no-font-background">
                         <label class="input-name" for="noFontBackground">Fondo transparente</label>
                     </article>
                 </section>
                 <article class="input-container font-shadow-buttons">
                     <p class="aside-subtitle">Contorno</p>
-                    <button type="button" class="font-shadow-button" id="fontBorderNone">Ninguno</button>
-                    <button type="button" class="font-shadow-button" id="fontBorderLight">Claro</button>
-                    <button type="button" class="font-shadow-button" id="fontBorderDark">Oscuro</button>
+                    <button type="button" class="font-shadow-button" id="font-border-none">Ninguno</button>
+                    <button type="button" class="font-shadow-button" id="font-border-light">Claro</button>
+                    <button type="button" class="font-shadow-button" id="font-border-dark">Oscuro</button>
                 </article>
                 <article class="input-container">
                     <label class="aside-subtitle" for="fontSpace">Espaciado</label>
-                    <input type="number" id="fontSpace">
+                    <input type="number" id="font-space">
                 </article>
                 <article class="input-container">
                     <label class="aside-subtitle" for="fontInter">Interlineado</label>
-                    <select name="fontInter" id="fontInter">
+                    <select name="fontInter" id="font-inter">
                         <option value="0.8">0.8</option>
                         <option value="1">1</option>
                         <option value="1.2">1.2</option>
