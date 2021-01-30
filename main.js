@@ -21,9 +21,10 @@ const download = document.getElementById('download');
 
 const imageForm = document.getElementById('image-form');
 const imageUrl = document.getElementById('image-url');
-const inputBackground = document.getElementById('input-background');
+const imageBackground = document.getElementById('image-background');
 const backgroundFilter = document.getElementById('background-filter');
-const brillo = document.getElementById('brillo');
+const rangeFilters = document.getElementsByClassName('range-filter');
+const brightness = document.getElementById('brightness');
 const opacity = document.getElementById('opacity');
 const contrast = document.getElementById('contrast');
 const unfocus = document.getElementById('unfocus');
@@ -62,6 +63,7 @@ imageButton.addEventListener('click', (e) => {
     textForm.style.display = 'none';
     imageForm.style.display = 'flex';
 })
+
 textButton.addEventListener('click', (e) => {
     e.preventDefault();
     imageForm.style.display = 'none';
@@ -90,22 +92,73 @@ lightModeButton.addEventListener('change', () => {
 
 // ------------------------------IMAGE SETTINGS CODE------------------------------
 
+// ---------------image url---------------
+
+imageUrl.addEventListener('input', () => {
+    imagePerSe.style.background = `url(${imageUrl.value})`;
+    imagePerSe.style.backgroundSize = 'cover';
+    imagePerSe.style.backgroundPosition = 'center';
+})
+
+// ---------------image background color---------------
+
+imageBackground.addEventListener('input', () => {
+    imagePerSe.style.backgroundColor = `${imageBackground.value}`;
+})
+
+backgroundFilter.addEventListener('change', () => {
+    imagePerSe.style.backgroundBlendMode = `${backgroundFilter[backgroundFilter.selectedIndex].value}`;
+})
+
+// ---------------image background filters---------------
+
+Array.from(rangeFilters).forEach(rangeFilter => {
+    rangeFilter.addEventListener('change', () => {
+        if (rangeFilter.id === 'blur') {
+            imagePerSe.style.filter = `${rangeFilter.id}(${rangeFilter.value}px)`
+        } else if (rangeFilter.id === 'hue-rotate') {
+            imagePerSe.style.filter = `${rangeFilter.id}(${rangeFilter.value}deg)`
+        } else if (rangeFilter.id === 'brightness' || rangeFilter.id === 'opacity' || rangeFilter.id === 'invert') {
+            imagePerSe.style.filter = `${rangeFilter.id}(${rangeFilter.value})`
+        } else {
+            imagePerSe.style.filter = `${rangeFilter.id}(${rangeFilter.value}%)`
+        }
+    })
+})
+
+// ---------------reset filters button---------------
+
+undoFilters.addEventListener('click', () => {
+    brightness.value = 1; 
+    opacity.value = 1; 
+    contrast.value = 100;
+    unfocus.value = 0; 
+    greyScale.value = 0; 
+    sepia.value = 0;
+    hue.value = 0;
+    saturation.value = 100;
+    negative.value = 0;
+}) // me gustaría automatizarlo guardando los valores originales al cargar la pagina y despues aplicandolo aca
+
 
 
 
 // ------------------------------TEXT SETTINGS CODE------------------------------
 
 // ---------------text inputs---------------
+
 inputTopText.addEventListener('keyup', (e) => {
     e.preventDefault();
     imageTopText.innerText = `${inputTopText.value}`
 })
+
 inputBottomText.addEventListener('keyup', (e) => {
     e.preventDefault();
     imageBottomText.innerText = `${inputBottomText.value}`
 })
 
 // ---------------text checkboxes---------------
+
 withTopText.addEventListener('change', (e) => {
     e.preventDefault();
     if (this.checked) {
@@ -114,6 +167,7 @@ withTopText.addEventListener('change', (e) => {
         imageTopTextContainer.style.display = 'flex';
     }
 }) //nofunciona
+
 withBottomText.addEventListener('change', (e) => {
     e.preventDefault();
     if (this.checked) {
@@ -124,11 +178,13 @@ withBottomText.addEventListener('change', (e) => {
 }) //no funciona
 
 // ---------------font settings---------------
+
 fontName.addEventListener('change', (e) => {
     e.preventDefault();
     imageInProgress.style.fontFamily = `${fontName.value}`
 
 }) //nofunciona
+
 fontSize.addEventListener('change', (e) => {
     e.preventDefault();
     imageInProgress.style.fontSize = `${fontSize.value}`
@@ -144,11 +200,13 @@ textAlignLeft.addEventListener('click', (e) => {
     imageTopText.style.textAlign = 'left';
     imageBottomText.style.textAlign = 'left';
 }) //nofunciona ninguno
+
 textAlignCenter.addEventListener('click', (e) => {
     e.preventDefault();
     imageTopText.style.textAlign = 'center';
     imageBottomText.style.textAlign = 'center';
 })
+
 textAlignRight.addEventListener('click', (e) => {
     e.preventDefault();
     imageTopText.style.textAlign = 'right';
@@ -157,13 +215,13 @@ textAlignRight.addEventListener('click', (e) => {
 
 // ---------------font colors---------------
 
-fontColor.addEventListener('change', (e) => {
+fontColor.addEventListener('input', (e) => {
     e.preventDefault();
     imageTopText.style.color = `${fontColor.value}`;
     imageBottomText.style.color = `${fontColor.value}`;
 })
 
-fontBackground.addEventListener('change', (e) =>{
+fontBackground.addEventListener('input', (e) => {
     e.preventDefault();
     imageTopTextContainer.style.backgroundColor = `${fontBackground.value}`;
     imageBottomTextContainer.style.backgroundColor = `${fontBackground.value}`;
@@ -179,31 +237,31 @@ noFontBackground.addEventListener('change', (e) => {
 
 // ---------------font shadow---------------
 
-fontBorderNone.addEventListener('click', () =>{
+fontBorderNone.addEventListener('click', () => {
     imageTopText.style.textShadow = 'none';
     imageBottomText.style.textShadow = 'none';
 })
 
-fontBorderLight.addEventListener('click', () =>{
+fontBorderLight.addEventListener('click', () => {
     imageTopText.style.textShadow = '-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white';
     imageBottomText.style.textShadow = '-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white';
 })
 
-fontBorderDark.addEventListener('click', () =>{
+fontBorderDark.addEventListener('click', () => {
     imageTopText.style.textShadow = '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black';
     imageBottomText.style.textShadow = '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black';
 })
 
 // ---------------font spacing---------------
 
-fontSpace.addEventListener('keyup', () =>{
+fontSpace.addEventListener('keyup', () => {
     imageTopText.style.letterSpacing = `${parseInt(fontSpace.value)}`;
     imageBottomText.style.letterSpacing = `${parseInt(fontSpace.value)}`;
 }) // no funciona
 
 // ---------------font line spacing---------------
 
-fontInter.addEventListener('change', () =>{
+fontInter.addEventListener('change', () => {
     imageTopText.style.lineHeight = `${fontInter[fontInter.selectedIndex].value}`;
     imageBottomText.style.lineHeight = `${fontInter[fontInter.selectedIndex].value}`;
 }) // no funciona

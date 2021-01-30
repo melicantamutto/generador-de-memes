@@ -33,9 +33,9 @@
                 <p class="main-button-text">Texto</p>
             </button>
             <section class="main-button-container">
-                <input type="checkbox" name="lightModeButton" class="light-mode-checkbox" id="light-mode-button"
+                <input type="checkbox" name="light-mode-button" class="light-mode-checkbox" id="light-mode-button"
                     checked="checked">
-                <label for="lightModeButton" class="main-button">
+                <label for="light-mode-button" class="main-button">
                     <i class="far fa-lightbulb"></i>
                     <p class="main-button-text">Modo oscuro</p>
                 </label>
@@ -66,61 +66,64 @@
             <fieldset class="aside-form-container">
                 <legend>IMAGEN</legend>
                 <article class="input-container">
-                    <label class="aside-subtitle" for="imageUrl">URL</label>
+                    <label class="aside-subtitle" for="image-url">URL</label>
                     <input type="text" id="image-url">
                 </article>
                 <article class="input-container">
-                    <label class="input-name aside-subtitle" for="inputBackground">Fondo</label>
-                    <input type="color" class="inputBackground" id="input-background">
-                    <label class="input-name" for="backgroundFilter"></label>
+                    <label class="input-name aside-subtitle" for="image-background">Fondo</label>
+                    <input type="color" class="image-background" id="image-background">
+                    <label class="input-name" for="background-filter"></label>
                     <select name="background-filter" class="background-filter" id="background-filter">
-                        <option value="none">Ninguno</option>
+                        <option value="unset">Ninguno</option>
                         <option value="lighten">Aclarar</option>
-                        <option value="dark">Oscurecer</option>
+                        <option value="darken">Oscurecer</option>
                         <option value="difference">Diferencia</option>
-                        <option value="luminocity">Luminosidad</option>
+                        <option value="luminosity">Luminosidad</option>
                         <option value="multiply">Multiplicar</option>
                     </select>
                 </article>
                 <section class="range-inputs">
                     <p class="aside-subtitle">Filtros</p>
                     <article class="input-container">
-                        <label class="range-name" for="brillo">Brillo</label>
-                        <input type="range" id="brillo">
+                        <label class="range-name" for="brightness">Brillo</label>
+                        <input type="range" class="range-filter" id="brightness" max="1" min="0" step="0.1" value="1"> 
+                        <!-- max="3" ideal -->
                     </article>
                     <article class="input-container">
                         <label class="range-name" for="opacity">Opacidad</label>
-                        <input type="range" id="opacity">
+                        <input type="range" class="range-filter" id="opacity" max="1" min="0" step="0.1" value="1">
                     </article>
                     <article class="input-container">
                         <label class="range-name" for="contrast">Contraste</label>
-                        <input type="range" id="contrast">
+                        <input type="range" class="range-filter" id="contrast" max="1000" min="100" step="1" value="100">
+                        <!-- max="500" min="0" ideal -->
                     </article>
                     <article class="input-container">
-                        <label class="range-name" for="unfocus">Desenfoque</label>
-                        <input type="range" id="unfocus">
+                        <label class="range-name" for="blur">Desenfoque</label>
+                        <input type="range" class="range-filter" id="blur" max="10" min="0" step="0.1" value="0">
                     </article>
                     <article class="input-container">
-                        <label class="range-name" for="greyScale">Escala de grises</label>
-                        <input type="range" id="grey-scale">
+                        <label class="range-name" for="grayscale">Escala de grises</label>
+                        <input type="range" class="range-filter" id="grayscale" max="100" min="0" step="1" value="0">
                     </article>
                     <article class="input-container">
                         <label class="range-name" for="sepia">Sepia</label>
-                        <input type="range" id="sepia">
+                        <input type="range" class="range-filter" id="sepia" max="100" min="0" step="1" value="0"> 
                     </article>
                     <article class="input-container">
-                        <label class="range-name" for="hue">HUE</label>
-                        <input type="range" id="hue">
+                        <label class="range-name" for="hue-rotate">HUE</label>
+                        <input type="range" class="range-filter" id="hue-rotate" max="359" min="0" step="1" value="0">
                     </article>
                     <article class="input-container">
-                        <label class="range-name" for="saturation">Saturación</label>
-                        <input type="range" id="saturation">
+                        <label class="range-name" for="saturate">Saturación</label>
+                        <input type="range" class="range-filter" id="saturate" max="1000" min="100" step="10" value="100">
+                        <!-- min="0" ideal -->
                     </article>
                     <article class="input-container">
-                        <label class="range-name" for="negative">Negativo</label>
-                        <input type="range" id="negative">
+                        <label class="range-name" for="invert">Negativo</label>
+                        <input type="range" class="range-filter" id="invert" max="1" min="0" step="0.1" value="0">
                     </article>
-                    <button class="undo-filters" id="undo-filters">Reestablecer filtros</button>
+                    <button class="undo-filters" id="undo-filters" type="button">Reestablecer filtros</button>
                 </section>
 
             </fieldset>
@@ -130,38 +133,38 @@
             <fieldset class="aside-form-container">
                 <legend>TEXTO</legend>
                 <article class="input-container">
-                    <label class="aside-subtitle" for="inputTopText">Superior</label>
-                    <input type="text" id="input-top-text" placeholder="TOP TEXT">
+                    <label class="aside-subtitle" for="input-top-text">Superior</label>
+                    <input type="text" id="input-top-text" value="TOP TEXT">
                 </article>
                 <article class="input-container complementary-option">
                     <input type="checkbox" id="with-top-text">
-                    <label class="input-name" for="withTopText">Sin texto superior</label>
+                    <label class="input-name" for="with-top-text">Sin texto superior</label>
                 </article>
                 <article class="input-container">
-                    <label class="aside-subtitle" for="inputBottomText">Inferior</label>
-                    <input type="text" id="input-bottom-text" placeholder="BOTTOM TEXT">
+                    <label class="aside-subtitle" for="input-bottom-text">Inferior</label>
+                    <input type="text" id="input-bottom-text" value="BOTTOM TEXT">
                 </article>
                 <article class="input-container complementary-option">
                     <input type="checkbox" id="with-bottom-text">
-                    <label class="input-name" for="withBottomtext">Sin texto inferior</label>
+                    <label class="input-name" for="with-bottom-text">Sin texto inferior</label>
                 </article>
                 <section class="font-inputs">
                     <article class="input-container">
-                        <label class="aside-subtitle" for="fontName">Fuente</label>
+                        <label class="aside-subtitle" for="font-name">Fuente</label>
                         <select name="fontName" id="font-name">
                             <option value="arial">Arial</option>
-                            <option value="arial-black">Arial Black</option>
-                            <option value="american-typewriter">American Typewriter</option>
-                            <option value="andale-mono">Andale Mono</option>
-                            <option value="comic-sans">Comic Sans MS</option>
+                            <option value="arial black">Arial Black</option>
+                            <option value="american typewriter">American Typewriter</option>
+                            <option value="andale mono">Andale Mono</option>
+                            <option value="comic sans">Comic Sans MS</option>
                             <option value="helvetica">Helvética</option>
                             <option value="impact">Impact</option>
                             <option value="verdana">Verdana</option>
-                            <option value="times-new-roman">Times New Roman</option>
+                            <option value="times new roman">Times New Roman</option>
                         </select>
                     </article>
                     <article class="input-container">
-                        <label class="input-name" for="fontSize"></label>
+                        <label class="input-name" for="font-size"></label>
                         <input type="number" id="font-size">
                     </article>
                     <button type="button" class="text-align-button" id="text-align-left">
@@ -176,16 +179,16 @@
                 </section>
                 <section class="font-color-inputs">
                     <article class="input-container">
-                        <label class="aside-subtitle" for="fontColor">Color</label>
+                        <label class="aside-subtitle" for="font-color">Color</label>
                         <input type="color" id="font-color">
                     </article>
                     <article class="input-container">
-                        <label class="aside-subtitle" for="fontBackground">Fondo</label>
+                        <label class="aside-subtitle" for="font-background">Fondo</label>
                         <input type="color" id="font-background">
                     </article>
                     <article class="input-container complementary-option">
                         <input type="checkbox" id="no-font-background">
-                        <label class="input-name" for="noFontBackground">Fondo transparente</label>
+                        <label class="input-name" for="no-font-background">Fondo transparente</label>
                     </article>
                 </section>
                 <article class="input-container font-shadow-buttons">
@@ -195,11 +198,11 @@
                     <button type="button" class="font-shadow-button" id="font-border-dark">Oscuro</button>
                 </article>
                 <article class="input-container">
-                    <label class="aside-subtitle" for="fontSpace">Espaciado</label>
+                    <label class="aside-subtitle" for="font-space">Espaciado</label>
                     <input type="number" id="font-space">
                 </article>
                 <article class="input-container">
-                    <label class="aside-subtitle" for="fontInter">Interlineado</label>
+                    <label class="aside-subtitle" for="font-inter">Interlineado</label>
                     <select name="fontInter" id="font-inter">
                         <option value="0.8">0.8</option>
                         <option value="1">1</option>
