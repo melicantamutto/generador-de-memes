@@ -1,4 +1,4 @@
-/* General aside form styles */
+/* -------------------General aside form styles------------------- */
 
 .aside-form-container {
     width: 80%;
@@ -65,7 +65,7 @@ input[type='text'] {
     transition: all 0.2s;
 }
 
-/* Range inputs styles - styled in --> http://danielstern.ca/range.css/#/  */
+/* -------------------Range inputs styles - styled in --> http://danielstern.ca/range.css/#/  */
 
 input[type=range] {
     width: 100%;
@@ -172,7 +172,7 @@ how to remove the virtical space around the range input in IE*/
     }
 }
 
-/* Image form styles */
+/* -------------------Image form styles------------------- */
 
 .image-form>.aside-form-container>.input-container:nth-of-type(2) {
     flex-direction: row;
@@ -208,7 +208,7 @@ how to remove the virtical space around the range input in IE*/
     padding: 0.75em 1.2em;
 }
 
-/* Text form styles */
+/* -------------------Text form styles------------------- */
 
 .text-form .complementary-option {
     flex-direction: row;
@@ -286,7 +286,7 @@ how to remove the virtical space around the range input in IE*/
 }
 
 
-/* Hovers */
+/* -------------------Hovers------------------- */
 
 input:hover,
 select:hover,

@@ -1,4 +1,4 @@
-/* Variables */
+/* -------------------Variables------------------- */
 
 :root {
     --lighterBackground: rgb(81, 81, 168);
@@ -8,7 +8,7 @@
     --fontColor: rgb(250, 246, 246);
 }
 
-/* Common styles */
+/* -------------------Common styles------------------- */
 
 * {
     margin: 0;
@@ -38,7 +38,7 @@ fieldset {
     display: none;
 }
 
-/* Page styles and organization */
+/* -------------------Page styles and organization------------------- */
 
 html,
 body {
@@ -54,13 +54,13 @@ body {
     position: relative;
 }
 
-/* Classes to use in JS */
+/* -------------------Classes to use in JS------------------- */
 
 .hide {
     display: none;
 }
 
-/* Sections styles */
+/* -------------------Sections styles------------------- */
 
 .main-section {
     height: 100vh;
@@ -83,7 +83,7 @@ body {
     flex-grow: 10;
 }
 
-/* Header styles */
+/* -------------------Header styles------------------- */
 
 .main-header {
     background-color: var(--darkBackground);
@@ -115,7 +115,7 @@ body {
     border: 5px double rgba(250, 246, 246, 0.5);
 }
 
-/* Aside styles */
+/* -------------------Aside styles------------------- */
 
 .aside-section {
     width: 15rem;
@@ -136,3 +136,24 @@ body {
 .text-form{
     display: none;
 }
+
+/* Responsive de ADA */
+/* @media (min-width: 1300px) {
+    .panel {
+      display: block;
+      box-shadow: none;
+    }
+    .panel-close-button {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .app-title {
+      font-size: 26px;
+    }
+    .panel {
+      width: 100%;
+    }
+  }
+   */

@@ -35,6 +35,8 @@ const saturation = document.getElementById('saturation');
 const negative = document.getElementById('negative');
 const undoFilters = document.getElementById('undo-filters');
 
+const rangeValues = document.querySelectorAll('.range-filter')
+
 // ---------------Text settings elements---------------
 
 const textForm = document.getElementById('text-form');
@@ -73,7 +75,7 @@ textButton.addEventListener('click', (e) => {
 // ------------------------------DARK MODE CODE------------------------------
 
 lightModeButton.addEventListener('change', () => {
-    if (this.checked) {
+    if (lightModeButton.checked) {
         document.documentElement.style.setproperty('--lighterBackground', 'rgb(81, 81, 168)');
         document.documentElement.style.setproperty('--lightBackground', 'rgb(59, 59, 141)');
         document.documentElement.style.setproperty('--mediumBackground', 'rgb(rgb(28, 28, 83)');
@@ -157,60 +159,60 @@ inputBottomText.addEventListener('keyup', (e) => {
     imageBottomText.innerText = `${inputBottomText.value}`
 })
 
-// ---------------text checkboxes---------------
+// ---------------text display checkboxes---------------
 
 withTopText.addEventListener('change', (e) => {
     e.preventDefault();
-    if (this.checked) {
+    if (withTopText.checked) {
         imageTopTextContainer.style.display = 'none';
     } else {
         imageTopTextContainer.style.display = 'flex';
     }
-}) //nofunciona
+}) 
 
 withBottomText.addEventListener('change', (e) => {
     e.preventDefault();
-    if (this.checked) {
+    if (withBottomText.checked) {
         imageBottomTextContainer.style.display = 'none';
     } else {
         imageBottomTextContainer.style.display = 'flex';
     }
-}) //no funciona
+})
 
 // ---------------font settings---------------
 
 fontName.addEventListener('change', (e) => {
     e.preventDefault();
-    imageInProgress.style.fontFamily = `${fontName.value}`
+    imageInProgress.style.fontFamily = `${fontName.value}`;
 
 }) //nofunciona
 
-fontSize.addEventListener('change', (e) => {
+fontSize.addEventListener('input', (e) => {
     e.preventDefault();
-    imageInProgress.style.fontSize = `${fontSize.value}`
+    imageTopText.style.fontSize = `${fontSize.value}px`;
+    imageBottomText.style.fontSize = `${fontSize.value}px`;
 
-}) //nofunciona
+}) 
 
 
 // ---------------text align---------------
 
 textAlignLeft.addEventListener('click', (e) => {
-    textAlignLeft.style.backgroundColor = 'black'
     e.preventDefault();
-    imageTopText.style.textAlign = 'left';
-    imageBottomText.style.textAlign = 'left';
+    imageTopTextContainer.style.justifyContent = 'flex-start';
+    imageBottomTextContainer.style.justifyContent = 'flex-start';
 }) //nofunciona ninguno
 
 textAlignCenter.addEventListener('click', (e) => {
     e.preventDefault();
-    imageTopText.style.textAlign = 'center';
-    imageBottomText.style.textAlign = 'center';
+    imageTopTextContainer.style.justifyContent = 'center';
+    imageBottomTextContainer.style.justifyContent = 'center';
 })
 
 textAlignRight.addEventListener('click', (e) => {
     e.preventDefault();
-    imageTopText.style.textAlign = 'right';
-    imageBottomText.style.textAlign = 'right';
+    imageTopTextContainer.style.justifyContent = 'flex-end';
+    imageBottomTextContainer.style.justifyContent = 'flex-end';
 })
 
 // ---------------font colors---------------
@@ -229,11 +231,25 @@ fontBackground.addEventListener('input', (e) => {
 
 noFontBackground.addEventListener('change', (e) => {
     e.preventDefault();
-    if (this.checked) {
-        imageTopTextContainer.style.backgroundColor = 'rgba(0,0,0,0)';
-        imageBottomTextContainer.style.backgroundColor = 'rgba(0,0,0,0)';
+    if (noFontBackground.checked) {
+        imageTopTextContainer.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        imageBottomTextContainer.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        imageTopTextContainer.style.position = 'absolute';
+        imageTopTextContainer.style.top = '0';
+        imageTopTextContainer.style.left = '0';
+        imageBottomTextContainer.style.position = 'absolute';
+        imageBottomTextContainer.style.bottom = '0';
+        imageBottomTextContainer.style.left = '0';
+        imagePerSe.style.backgroundSize = 'cover';
+    } else{
+        imageTopTextContainer.style.backgroundColor = 'white';
+        imageBottomTextContainer.style.backgroundColor = 'white';
+        imageTopTextContainer.style.position = 'static';
+        imageBottomTextContainer.style.position = 'static';
+        imagePerSe.style.backgroundSize = '38em, 100%';
+
     }
-}) // no funciona
+})
 
 // ---------------font shadow---------------
 
@@ -254,17 +270,17 @@ fontBorderDark.addEventListener('click', () => {
 
 // ---------------font spacing---------------
 
-fontSpace.addEventListener('keyup', () => {
-    imageTopText.style.letterSpacing = `${parseInt(fontSpace.value)}`;
-    imageBottomText.style.letterSpacing = `${parseInt(fontSpace.value)}`;
-}) // no funciona
+fontSpace.addEventListener('input', () => {
+    imageTopText.style.letterSpacing = `${parseInt(fontSpace.value)}px`;
+    imageBottomText.style.letterSpacing = `${parseInt(fontSpace.value)}px`;
+})
 
 // ---------------font line spacing---------------
 
 fontInter.addEventListener('change', () => {
     imageTopText.style.lineHeight = `${fontInter[fontInter.selectedIndex].value}`;
     imageBottomText.style.lineHeight = `${fontInter[fontInter.selectedIndex].value}`;
-}) // no funciona
+})
 
 
 // ------------------------------DOWNLOAD BUTTON CODE------------------------------
