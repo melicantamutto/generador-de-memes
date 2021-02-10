@@ -5,23 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- Used fonts -->
+    <!-- -------------------Used fonts------------------- -->
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Outline&family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap"
         rel="stylesheet">
-    <!-- App fonts -->
+    <!-- -------------------App fonts------------------- -->
 
-    <!-- Link CSS -->
+    <!-- -------------------Link CSS------------------- -->
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/image.css">
     <link rel="stylesheet" href="./styles/aside.css">
-    <!-- Title -->
+    <!-- -------------------Title------------------- -->
     <title>Generador de memes</title>
 </head>
 
-<body>
-    <section class="main-section display-section">
-        <!-- HEADER -->
+<body id="body">
+    <section class="main-section display-section" id="main-section">
+        <!-- -------------------HEADER------------------- -->
         <header class="secondary-section main-header">
             <h1 class="main-title">Generador de Memes</h1>
             <button class="main-button" id="image-button">
@@ -33,15 +33,15 @@
                 <p class="main-button-text">Texto</p>
             </button>
             <section class="main-button-container">
-                <input type="checkbox" name="light-mode-button" class="light-mode-checkbox" id="light-mode-button" checked="checked"
+                <input type="checkbox" name="light-mode-button" class="light-mode-checkbox" id="light-mode-button"
                     checked="checked">
                 <label for="light-mode-button" class="main-button">
                     <i class="far fa-lightbulb"></i>
-                    <p class="main-button-text">Modo oscuro</p>
+                    <p class="main-button-text" id="light-mode-text">Modo claro</p>
                 </label>
             </section>
         </header>
-        <!-- IMAGE -->
+        <!-- -------------------IMAGE------------------- -->
         <main class="secondary-section main-main">
             <section class="image-in-progress" id="image-in-progress">
                 <article class="image-section image-text-container" id="image-top-text-container">
@@ -52,17 +52,18 @@
                     <p class="image-text" id="image-bottom-text">BOTTOM TEXT</p>
                 </article>
             </section>
-            <!-- DOWNLOAD BUTTON -->
+            <!-- -------------------DOWNLOAD BUTTON------------------- -->
             <button class="download" id="download">
                 <i class="fas fa-download"></i>
                 <p class="download-text">Descargar meme</p>
             </button>
         </main>
     </section>
-    <!-- ASIDE -->
-    <aside class="main-section aside-section">
-        <!-- IMAGE SETTINGS -->
+    <!-- -------------------ASIDE------------------- -->
+    <aside class="main-section aside-section" id="aside-section">
+        <!-- -------------------IMAGE SETTINGS------------------- -->
         <form action="" id="image-form" class="aside-form image-form">
+            <i class="far fa-times-circle close-form-icon" id="close-image"></i>
             <fieldset class="aside-form-container">
                 <legend>IMAGEN</legend>
                 <article class="input-container">
@@ -86,7 +87,7 @@
                     <p class="aside-subtitle">Filtros</p>
                     <article class="input-container">
                         <label class="range-name" for="brightness">Brillo</label>
-                        <input type="range" class="range-filter" id="brightness" max="1" min="0" step="0.1" value="1"> 
+                        <input type="range" class="range-filter" id="brightness" max="1" min="0" step="0.1" value="1">
                         <!-- max="3" ideal -->
                     </article>
                     <article class="input-container">
@@ -95,7 +96,8 @@
                     </article>
                     <article class="input-container">
                         <label class="range-name" for="contrast">Contraste</label>
-                        <input type="range" class="range-filter" id="contrast" max="1000" min="100" step="1" value="100">
+                        <input type="range" class="range-filter" id="contrast" max="1000" min="100" step="1"
+                            value="100">
                         <!-- max="500" min="0" ideal -->
                     </article>
                     <article class="input-container">
@@ -108,7 +110,7 @@
                     </article>
                     <article class="input-container">
                         <label class="range-name" for="sepia">Sepia</label>
-                        <input type="range" class="range-filter" id="sepia" max="100" min="0" step="1" value="0"> 
+                        <input type="range" class="range-filter" id="sepia" max="100" min="0" step="1" value="0">
                     </article>
                     <article class="input-container">
                         <label class="range-name" for="hue-rotate">HUE</label>
@@ -116,20 +118,23 @@
                     </article>
                     <article class="input-container">
                         <label class="range-name" for="saturate">Saturación</label>
-                        <input type="range" class="range-filter" id="saturate" max="1000" min="100" step="10" value="100">
+                        <input type="range" class="range-filter" id="saturate" max="1000" min="100"
+                            stepontName.addEv="10" value="100">
                         <!-- min="0" ideal -->
                     </article>
                     <article class="input-container">
                         <label class="range-name" for="invert">Negativo</label>
                         <input type="range" class="range-filter" id="invert" max="1" min="0" step="0.1" value="0">
                     </article>
-                    <button class="undo-filters" id="undo-filters" type="button">Reestablecer filtros</button>
+                    <button class="undo-filters" id="undo-filters" type="button">Restablecer
+                        filtros</button>
                 </section>
 
             </fieldset>
         </form>
-        <!-- TEXT SETTINGS -->
+        <!-- -------------------TEXT SETTINGS------------------- -->
         <form action="" id="text-form" class="aside-form text-form hide">
+            <i class="far fa-times-circle close-form-icon" id="close-text"></i>
             <fieldset class="aside-form-container">
                 <legend>TEXTO</legend>
                 <article class="input-container">
@@ -180,11 +185,11 @@
                 <section class="font-color-inputs">
                     <article class="input-container">
                         <label class="aside-subtitle" for="font-color">Color</label>
-                        <input type="color" id="font-color">
+                        <input type="color" id="font-color" value="#000000">
                     </article>
                     <article class="input-container">
                         <label class="aside-subtitle" for="font-background">Fondo</label>
-                        <input type="color" id="font-background">
+                        <input type="color" id="font-background" value="#FFFFFF">
                     </article>
                     <article class="input-container complementary-option">
                         <input type="checkbox" id="no-font-background">
@@ -216,10 +221,22 @@
         </form>
     </aside>
 
-    <!-- Script iconos -->
+    <!-- -------------------Script iconos------------------- -->
+
     <script src="https://kit.fontawesome.com/a484224e5b.js" crossorigin="anonymous"></script>
-    <!-- App script -->
+
+    <!-- -------------------App script------------------- -->
+
     <script src="./main.js"></script>
+
+    <!-- -------------------Download scripts------------------- -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+        integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"
+        integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw=="
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

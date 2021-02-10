@@ -1,11 +1,28 @@
 /* -------------------Variables------------------- */
 
 :root {
-    --lighterBackground: rgb(81, 81, 168);
-    --lightBackground: rgb(59, 59, 141);
-    --mediumBackground: rgb(28, 28, 83);
-    --darkBackground: rgb(9, 9, 36);
-    --fontColor: rgb(250, 246, 246);
+    --lighterBackground: rgb(129, 90, 192);
+    --lightBackground: rgb(98, 71, 170);
+    --mediumBackground: rgb(57, 57, 117);
+    --darkBackground: rgb(37, 50, 90);
+    --fontColor: rgb(244, 237, 250);
+    --downloadButton: #850f62;
+    --downloadButtonHover: #81336a;
+    --mainButtonsHover: rgba(250, 246, 246, 0.5);
+    --image-shadow: rgba(116, 116, 194, 0.87);
+}
+
+.light-mode {
+    --lighterBackground: #F0EFEB;
+    --lightBackground: #FFF1E6;
+    --mediumBackground: #EDDCD2;
+    --darkBackground: #E8D1C5;
+    --fontColor: #2c3831;
+    --downloadButton: #EEDDD3;
+    --downloadButtonHover: #EDEDE8;
+    --mainButtonsHover: rgba(131, 131, 131, 0.5);
+    --image-shadow: rgba(224, 208, 208, 0.85);
+
 }
 
 /* -------------------Common styles------------------- */
@@ -34,7 +51,7 @@ fieldset {
     border: none;
 }
 
-.light-mode-checkbox{
+.light-mode-checkbox {
     display: none;
 }
 
@@ -42,12 +59,11 @@ fieldset {
 
 html,
 body {
-    max-width: 100vw;
-    max-height: 100vh;
+    width: 100vw;
+    height: 100vh;
 }
 
 body {
-    height: 100vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -63,7 +79,7 @@ body {
 /* -------------------Sections styles------------------- */
 
 .main-section {
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,54 +122,164 @@ body {
     padding: 0.5em 0.75em;
     border-radius: 20px;
     border: 5px double rgba(0, 0, 0, 0);
+    font-family: inherit;
 }
 
 .main-button:hover,
 .main-button:active,
 .main-button:focus {
     background-color: var(--lightBackground);
-    border: 5px double rgba(250, 246, 246, 0.5);
+    border: 5px double var(--mainButtonsHover);
 }
+
+.main-button-text {
+    font-family: 'Merriweather Sans';
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.main-button>i {
+    font-size: 1em;
+}
+
 
 /* -------------------Aside styles------------------- */
 
 .aside-section {
-    width: 15rem;
-    background-color: var(--mediumBackground);
+    max-width: 19.58em;
+    min-width: 15rem;
     flex-grow: 1;
     font-family: 'Merriweather Sans';
+    height: 100vh;
 }
 
 .aside-form {
-    height: 98%;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    position: relative;
+    background-color: var(--mediumBackground);
+    padding: 5%;
 }
 
-.text-form{
+.text-form {
     display: none;
 }
 
-/* Responsive de ADA */
-/* @media (min-width: 1300px) {
-    .panel {
-      display: block;
-      box-shadow: none;
+#close-image,
+#close-text {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+}
+
+
+/* -------------------Width responsive styles------------------- */
+
+@media (max-width: 1550px) {
+
+    .aside-section {
+        flex-grow: 2;
     }
-    .panel-close-button {
-      display: none;
+}
+
+@media (max-width: 1400px) {
+
+    .input {
+        font-size: 70%;
     }
-  }
-  
-  @media (max-width: 700px) {
-    .app-title {
-      font-size: 26px;
+}
+
+@media (max-width: 1300px) {
+
+    .aside-section {
+        font-size: 90%;
     }
-    .panel {
-      width: 100%;
+
+    .aside-section {
+        flex-grow: 4;
     }
-  }
-   */
+
+
+    #close-image,
+    #close-text {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 1150px) {
+
+    .image-in-progress{
+        font-size: 85%;
+    }
+
+    /* .download{
+        font-size: 2em;
+    } */
+}
+
+@media (max-width: 950px) {
+
+    .image-in-progress{
+        font-size: 70%;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .aside-section {
+        display: none;
+        max-width: 100vw;
+    }
+
+    .main-section {
+        width: 100vw;
+    }
+
+    .aside-form{
+        width: 100%;
+    }
+
+    /* .image-in-progress{
+        width: 85%;
+    } */
+}
+
+/* -------------------Height responsive styles------------------- */
+
+@media (max-height: 874px) {
+
+    .aside-section {
+        font-size: 90%;
+    }
+
+    .aside-form{
+        overflow: scroll;
+    }
+
+    .display-section{
+        font-size: 85%;
+    }
+}
+
+@media (max-height: 740px) {
+
+    .aside-section {
+        overflow: scroll;
+        font-size: 90%;
+    }
+
+    .display-section{
+        font-size: 70%;
+    }
+
+    .main-button-text{
+        font-size: 0.75rem;
+    }
+}

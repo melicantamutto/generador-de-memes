@@ -1,13 +1,15 @@
 /* -------------------General aside form styles------------------- */
 
 .aside-form-container {
-    width: 80%;
+    width: 100%;
 }
 
 legend {
     text-align: center;
-    font-size: 1.5em;
-    margin: 1em auto 2em auto;
+    font-size: 1.8em;
+    margin: 1em auto 1em auto;
+    font-family: 'Bungee Outline';
+    font-weight: 700;
 }
 
 .input-name,
@@ -50,6 +52,7 @@ input[type="color"],
 
 input[type='text'] {
     padding: 0.75em;
+    width: 100%;
 }
 
 .input-container {
@@ -63,13 +66,14 @@ input[type='text'] {
     border: none;
     border-radius: 4px;
     transition: all 0.2s;
+    margin-bottom: 1em;
 }
 
 /* -------------------Range inputs styles - styled in --> http://danielstern.ca/range.css/#/  */
 
 input[type=range] {
     width: 100%;
-    margin: 0.2rem 0;
+    margin: 0.05rem auto;
     background-color: transparent;
     -webkit-appearance: none;
 }
@@ -79,7 +83,7 @@ input[type=range]:focus {
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-    background: #3b3b8d;
+    background: var(--lightBackground);
     border: 0;
     border-radius: 9.7px;
     width: 100%;
@@ -103,7 +107,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 }
 
 input[type=range]::-moz-range-track {
-    background: #3b3b8d;
+    background: var(--lightBackground);
     border: 0;
     border-radius: 9.7px;
     width: 100%;
@@ -137,7 +141,7 @@ input[type=range]::-ms-fill-lower {
 }
 
 input[type=range]::-ms-fill-upper {
-    background: #3b3b8d;
+    background: var(--lightBackground);
     border: 0;
     border-radius: 19.4px;
 }
@@ -154,7 +158,7 @@ input[type=range]::-ms-thumb {
 }
 
 input[type=range]:focus::-ms-fill-lower {
-    background: #3b3b8d;
+    background: var(--lightBackground);
 }
 
 input[type=range]:focus::-ms-fill-upper {
@@ -246,12 +250,12 @@ how to remove the virtical space around the range input in IE*/
     margin-right: 2%;
 }
 
-.font-inputs>.text-align-button{
+.font-inputs>.text-align-button {
     margin-bottom: 0.6rem;
 }
 
 .font-inputs>.text-align-button,
-.font-shadow-buttons > .font-shadow-button{
+.font-shadow-buttons>.font-shadow-button {
     flex: 1 2 10%;
     margin-right: 2%;
     padding: 0.65em;
@@ -262,26 +266,27 @@ how to remove the virtical space around the range input in IE*/
     margin-right: 0;
 }
 
-.font-color-inputs > .input-container{
+.font-color-inputs>.input-container {
     width: 40%;
     flex: 1 1 40%;
     margin-right: 2%;
 }
-.font-color-inputs > .input-container:nth-of-type(-n+2)> input{
+
+.font-color-inputs>.input-container:nth-of-type(-n+2)>input {
     width: 100%;
 }
 
 
-.font-color-inputs > .input-container:nth-of-type(2) {
+.font-color-inputs>.input-container:nth-of-type(2) {
     margin-right: 0;
     margin-top: 0.43rem;
 }
 
-.font-color-inputs > .complementary-option{
+.font-color-inputs>.complementary-option {
     flex: 1 1 100%;
 }
 
-.font-shadow-buttons > p{
+.font-shadow-buttons>p {
     flex: 1 1 100%;
 }
 
@@ -295,13 +300,20 @@ input:focus,
 select:focus {
     background-color: var(--lighterBackground);
 }
-.range-inputs > .input-container > input:hover,
-.range-inputs > .input-container > input:focus{
+
+.range-inputs>.input-container>input:hover,
+.range-inputs>.input-container>input:focus {
     background-color: inherit;
 }
 
 input[type="color"]:hover,
-input[type="color"]:focus{
+input[type="color"]:focus {
     border: 3px double var(--darkBackground);
 
 }
+
+input[type="text"]:focus{
+    border: 1px solid var(--fontColor);
+    outline: none;
+}
+
