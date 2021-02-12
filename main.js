@@ -74,15 +74,15 @@ const fontInter = document.getElementById("font-inter");
 
 // ------------------------------ASIDE SETTINGS CODE------------------------------
 
-const displayAside = (show, hide) =>{
-    asideSection.style.display = "block";
-    hide.style.display = "none";
-    show.style.display = "flex";
-    if(mediaQuery.matches){
-        mainSection.style.display= "none";
-        show.style.width = '100vw';
-    }
-}
+const displayAside = (show, hide) => {
+  asideSection.style.display = "block";
+  hide.style.display = "none";
+  show.style.display = "flex";
+  if (mediaQuery.matches) {
+    mainSection.style.display = "none";
+    show.style.width = "100vw";
+  }
+};
 
 imageButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -110,10 +110,10 @@ lightModeButton.addEventListener("change", (e) => {
 // ------------------------------CLOSE BUTTONS CODE------------------------------
 
 const closeAside = () => {
-  asideSection.style.display= 'none';
-  if(mediaQuery.matches){
-    mainSection.style.display= "flex";
-}
+  asideSection.style.display = "none";
+  if (mediaQuery.matches) {
+    mainSection.style.display = "flex";
+  }
 };
 
 closeImage.addEventListener("click", () => {
@@ -123,10 +123,6 @@ closeImage.addEventListener("click", () => {
 closeText.addEventListener("click", () => {
   closeAside();
 });
-
-
-
-
 
 // ------------------------------IMAGE SETTINGS CODE------------------------------
 
@@ -187,12 +183,10 @@ undoFilters.addEventListener("click", (e) => {
   hue.value = 0;
   saturation.value = 100;
   negative.value = 0;
-  setTimeout(() => {
-    Array.from(rangeFilters).forEach((rangeFilter) => {
-      changeImageFilters(rangeFilter);
-    });
-  }, 100);
-}); // me gustaría automatizarlo guardando los valores originales al cargar la pagina y despues aplicandolo aca
+  for (let rangeFilter of rangeFilters) {
+    changeImageFilters(rangeFilter);
+  }
+});
 
 // ------------------------------TEXT SETTINGS CODE------------------------------
 
@@ -266,16 +260,27 @@ textAlignRight.addEventListener("click", (e) => {
 
 // ---------------font colors---------------
 
-fontColor.addEventListener("input", (e) => {
-  e.preventDefault();
+const changeFontColor = () =>{
   imageTopText.style.color = `${fontColor.value}`;
   imageBottomText.style.color = `${fontColor.value}`;
+
+}
+
+fontColor.addEventListener("input", (e) => {
+  e.preventDefault();
+  changeFontColor();
 });
+
+const changeFontBackground = () =>{
+  imageTopTextContainer.style.backgroundColor = `${fontBackground.value}`;
+  imageBottomTextContainer.style.backgroundColor = `${fontBackground.value}`;
+}
+
 
 fontBackground.addEventListener("input", (e) => {
   e.preventDefault();
-  imageTopTextContainer.style.backgroundColor = `${fontBackground.value}`;
-  imageBottomTextContainer.style.backgroundColor = `${fontBackground.value}`;
+  changeFontBackground();
+
 });
 
 noFontBackground.addEventListener("change", (e) => {
@@ -290,12 +295,12 @@ noFontBackground.addEventListener("change", (e) => {
     imageBottomTextContainer.style.bottom = "0";
     imageBottomTextContainer.style.left = "0";
     imagePerSe.style.backgroundSize = "cover";
+    changeFontColor();
   } else {
-    imageTopTextContainer.style.backgroundColor = `${fontColor.value}`;
-    imageBottomTextContainer.style.backgroundColor = `${fontColor.value}`;
     imageTopTextContainer.style.position = "static";
     imageBottomTextContainer.style.position = "static";
-    imagePerSe.style.backgroundSize = "38em, 100%";
+    changeFontColor();
+    changeFontBackground();
   }
 });
 
@@ -323,8 +328,11 @@ fontBorderDark.addEventListener("click", () => {
 // ---------------font spacing---------------
 
 fontSpace.addEventListener("input", () => {
-  imageTopText.style.letterSpacing = `${parseInt(fontSpace.value)}px`;
-  imageBottomText.style.letterSpacing = `${parseInt(fontSpace.value)}px`;
+  console.log(fontSpace.value)
+  imageTopTextContainer.style.paddingTop = `${fontSpace.value}px`;
+  imageTopTextContainer.style.paddingBottom = `${fontSpace.value}px`;
+  imageBottomTextContainer.style.paddingTop = `${fontSpace.value}px`;
+  imageBottomTextContainer.style.paddingBottom = `${fontSpace.value}px`;
 });
 
 // ---------------font line spacing---------------

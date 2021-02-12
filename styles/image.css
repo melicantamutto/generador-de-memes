@@ -19,9 +19,8 @@
 
 .image-text-container {
     background-color: #fff;
-    padding: 0.5em;
+    padding: 30px 0.75em;
     width: 38em;
-    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +34,6 @@
     font-size: 2.5em;
     width: 100%;
     text-align: center;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;

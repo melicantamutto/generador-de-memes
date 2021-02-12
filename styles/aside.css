@@ -32,7 +32,6 @@ select {
     background-color: var(--lightBackground);
     border: none;
     padding: 0.65em 0.3em;
-    transition: all 0.2s;
 }
 
 select {
@@ -65,7 +64,6 @@ input[type='text'] {
     background-color: var(--lightBackground);
     border: none;
     border-radius: 4px;
-    transition: all 0.2s;
     margin-bottom: 1em;
 }
 

@@ -4,24 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <!-- -------------------Primary Meta Tags------------------- -->
+
+    <meta name="title" content="Generador de Memes">
+    <meta name="description" content="App online para crear tus propios memes">
+    <meta name="author" content="Melina Lucía Cantamutto" />
+    <meta name="keywords" content="Melina Cantamutto, generador de memes, frontend, crear memes, generador, memes" />
+
+    <!-- -------------------Open Graph------------------- -->
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://modest-gates-9c9fda.netlify.app/">
+    <meta property="og:title" content="Generador de memes">
+    <meta property="og:description" content="App online para crear tus propios memes">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/melicantamutto/portafolio/master/images/meta-image.png">
+    <meta property="og:site_name" content="Generador de memes">
+
+    <!-- -------------------Twitter------------------- -->
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://modest-gates-9c9fda.netlify.app/">
+    <meta property="twitter:title" content="Generador de memes">
+    <meta property="twitter:description" content="App online para crear tus propios memes">
+    <meta property="twitter:image"
+        content="https://raw.githubusercontent.com/melicantamutto/portafolio/master/images/meta-image.png">
+    <meta name="twitter:image:alt" content="Meme Generator's main page">
+
     <!-- -------------------Used fonts------------------- -->
+
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Outline&family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap"
         rel="stylesheet">
-    <!-- -------------------App fonts------------------- -->
 
     <!-- -------------------Link CSS------------------- -->
+
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/image.css">
     <link rel="stylesheet" href="./styles/aside.css">
+
     <!-- -------------------Title------------------- -->
+
     <title>Generador de memes</title>
 </head>
 
 <body id="body">
     <section class="main-section display-section" id="main-section">
+
         <!-- -------------------HEADER------------------- -->
+
         <header class="secondary-section main-header">
             <h1 class="main-title">Generador de Memes</h1>
             <button class="main-button" id="image-button">
@@ -41,27 +73,35 @@
                 </label>
             </section>
         </header>
+
         <!-- -------------------IMAGE------------------- -->
+
         <main class="secondary-section main-main">
             <section class="image-in-progress" id="image-in-progress">
                 <article class="image-section image-text-container" id="image-top-text-container">
-                    <p class="image-text" id="image-top-text">TOP TEXT</p>
+                    <h2 class="image-text" id="image-top-text">TOP TEXT</h2>
                 </article>
                 <article class="image-section image-per-se" id="image-per-se"></article>
                 <article class="image-section image-text-container" id="image-bottom-text-container">
-                    <p class="image-text" id="image-bottom-text">BOTTOM TEXT</p>
+                    <h2 class="image-text" id="image-bottom-text">BOTTOM TEXT</h2>
                 </article>
             </section>
+
             <!-- -------------------DOWNLOAD BUTTON------------------- -->
+
             <button class="download" id="download">
                 <i class="fas fa-download"></i>
                 <p class="download-text">Descargar meme</p>
             </button>
         </main>
     </section>
+
     <!-- -------------------ASIDE------------------- -->
+
     <aside class="main-section aside-section" id="aside-section">
+
         <!-- -------------------IMAGE SETTINGS------------------- -->
+
         <form action="" id="image-form" class="aside-form image-form">
             <i class="far fa-times-circle close-form-icon" id="close-image"></i>
             <fieldset class="aside-form-container">
@@ -132,7 +172,9 @@
 
             </fieldset>
         </form>
+
         <!-- -------------------TEXT SETTINGS------------------- -->
+
         <form action="" id="text-form" class="aside-form text-form hide">
             <i class="far fa-times-circle close-form-icon" id="close-text"></i>
             <fieldset class="aside-form-container">
@@ -161,6 +203,7 @@
                             <option value="Arial Black">Arial Black</option>
                             <option value="American Typewriter">American Typewriter</option>
                             <option value="Andale Mono">Andale Mono</option>
+                            <option value="Bebas Neue" selected="selected">Bebas Neue</option>
                             <option value="Comic Sans MS">Comic Sans MS</option>
                             <option value="Helvetica">Helvética</option>
                             <option value="Impact">Impact</option>
@@ -204,7 +247,7 @@
                 </article>
                 <article class="input-container">
                     <label class="aside-subtitle" for="font-space">Espaciado</label>
-                    <input type="number" id="font-space">
+                    <input type="number" id="font-space" value="30">
                 </article>
                 <article class="input-container">
                     <label class="aside-subtitle" for="font-inter">Interlineado</label>

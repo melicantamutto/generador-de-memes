@@ -10,18 +10,20 @@
     --downloadButtonHover: #81336a;
     --mainButtonsHover: rgba(250, 246, 246, 0.5);
     --image-shadow: rgba(116, 116, 194, 0.87);
+    --title-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .light-mode {
-    --lighterBackground: #F0EFEB;
-    --lightBackground: #FFF1E6;
-    --mediumBackground: #EDDCD2;
+    --lighterBackground: #f8f7f1;
+    --lightBackground: #ffffff;
+    --mediumBackground: #f0e3dc;
     --darkBackground: #E8D1C5;
     --fontColor: #2c3831;
-    --downloadButton: #EEDDD3;
+    --downloadButton: #f0d1bf;
     --downloadButtonHover: #EDEDE8;
     --mainButtonsHover: rgba(131, 131, 131, 0.5);
-    --image-shadow: rgba(224, 208, 208, 0.85);
+    --image-shadow: rgba(187, 163, 163, 0.55);
+    --title-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 
 }
 
@@ -33,6 +35,7 @@
     box-sizing: border-box;
     text-decoration: none;
     color: var(--fontColor);
+    transition: all 0.2s;
 }
 
 .download,
@@ -53,6 +56,11 @@ fieldset {
 
 .light-mode-checkbox {
     display: none;
+}
+
+.main-title,
+legend{
+    text-shadow: var(--title-shadow);
 }
 
 /* -------------------Page styles and organization------------------- */
