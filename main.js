@@ -40,7 +40,7 @@ const rangeFilters = document.getElementsByClassName("range-filter");
 const brightness = document.getElementById("brightness");
 const opacity = document.getElementById("opacity");
 const contrast = document.getElementById("contrast");
-const nofocus = document.getElementById("unfocus");
+const nofocus = document.getElementById("blur");
 const greyScale = document.getElementById("grey-scale");
 const sepia = document.getElementById("sepia");
 const hue = document.getElementById("hue");
@@ -124,7 +124,8 @@ closeText.addEventListener("click", () => {
   closeAside();
 });
 
-// ------------------------------IMAGE SETTINGS CODE------------------------------
+// ------------------------------IMAGE SETTINGS CODE-------------------------
+
 
 // ---------------image url---------------
 
