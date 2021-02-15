@@ -43,9 +43,9 @@ const contrast = document.getElementById("contrast");
 const nofocus = document.getElementById("blur");
 const greyScale = document.getElementById("grayscale");
 const sepia = document.getElementById("sepia");
-const hue = document.getElementById("hue");
-const saturation = document.getElementById("saturation");
-const negative = document.getElementById("negative");
+const hue = document.getElementById("hue-rotation");
+const saturation = document.getElementById("saturate");
+const negative = document.getElementById("invert");
 const undoFilters = document.getElementById("undo-filters");
 // testing
 const rangeValues = document.querySelectorAll(".range-filter");
@@ -152,7 +152,7 @@ backgroundFilter.addEventListener("change", () => {
 const changeImageFilters = (rangeFilter) => {
   if (rangeFilter.id === "blur") {
     imagePerSe.style.filter = `${rangeFilter.id}(${rangeFilter.value}px)`;
-  } else if (rangeFilter.id === "hue-rotate") {
+  } else if (rangeFilter.id === "hue-rotation") {
     imagePerSe.style.filter = `${rangeFilter.id}(${rangeFilter.value}deg)`;
   } else if (
     rangeFilter.id === "brightness" ||
