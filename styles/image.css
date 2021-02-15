@@ -1,4 +1,4 @@
-/* -------------------Section general styles------------------- */
+/* -------------------🤍 Section general styles 🤍------------------- */
 
 .main-main {
     background-color: var(--lightBackground);
@@ -7,7 +7,7 @@
     flex-direction: column;
 }
 
-/* -------------------Image in progress------------------- */
+/* -------------------🖼️ Image in progress 🖼️------------------- */
 
 .image-in-progress {
     position: relative;
@@ -47,7 +47,7 @@
     flex-grow: 9;
 }
 
-/* -------------------Download button------------------- */
+/* -------------------⬇️ Download button ⬇️------------------- */
 
 .download {
     background-color: var(--downloadButton);

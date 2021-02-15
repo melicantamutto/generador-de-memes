@@ -1,4 +1,4 @@
-/* -------------------Variables------------------- */
+/* -------------------📌 Variables 📌------------------- */
 
 :root {
     --lighterBackground: rgb(129, 90, 192);
@@ -27,7 +27,7 @@
 
 }
 
-/* -------------------Common styles------------------- */
+/* -------------------🖤 Common styles 🖤------------------- */
 
 * {
     margin: 0;
@@ -63,7 +63,7 @@ legend{
     text-shadow: var(--title-shadow);
 }
 
-/* -------------------Page styles and organization------------------- */
+/* -------------------📋 Page styles and organization 📋------------------- */
 
 html,
 body {
@@ -78,13 +78,7 @@ body {
     position: relative;
 }
 
-/* -------------------Classes to use in JS------------------- */
-
-.hide {
-    display: none;
-}
-
-/* -------------------Sections styles------------------- */
+/* -------------------📦 Sections styles 📦------------------- */
 
 .main-section {
     height: 100%;
@@ -107,7 +101,7 @@ body {
     flex-grow: 10;
 }
 
-/* -------------------Header styles------------------- */
+/* -------------------🅰️ Header styles 🅰️------------------- */
 
 .main-header {
     background-color: var(--darkBackground);
@@ -119,7 +113,7 @@ body {
 .main-title {
     flex-basis: 100%;
     text-align: center;
-    font-size: 2.2em;
+    font-size: 2.5em;
     font-family: 'Bungee Outline';
     margin-bottom: 0.2em;
 }
@@ -151,7 +145,7 @@ body {
 }
 
 
-/* -------------------Aside styles------------------- */
+/* -------------------👉 Aside styles 👉------------------- */
 
 .aside-section {
     max-width: 19.58em;
@@ -187,7 +181,7 @@ body {
 }
 
 
-/* -------------------Width responsive styles------------------- */
+/* -------------------📱↔️ Width responsive styles 📱↔️------------------- */
 
 @media (max-width: 1550px) {
 
@@ -259,9 +253,11 @@ body {
     } */
 }
 
-/* -------------------Height responsive styles------------------- */
 
-@media (max-height: 874px) {
+
+/* -------------------📱↕️ Height responsive styles 📱↕️------------------- */
+
+@media (max-height: 896px) {
 
     .aside-section {
         font-size: 90%;
@@ -288,6 +284,10 @@ body {
     }
 
     .main-button-text{
-        font-size: 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .main-title{
+        font-size: 2.1em;
     }
 }
