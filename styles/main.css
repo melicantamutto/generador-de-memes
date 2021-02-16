@@ -1,293 +1,278 @@
 /* -------------------📌 Variables 📌------------------- */
 
 :root {
-    --lighterBackground: rgb(129, 90, 192);
-    --lightBackground: rgb(98, 71, 170);
-    --mediumBackground: rgb(57, 57, 117);
-    --darkBackground: rgb(37, 50, 90);
-    --fontColor: rgb(244, 237, 250);
-    --downloadButton: #850f62;
-    --downloadButtonHover: #81336a;
-    --mainButtonsHover: rgba(250, 246, 246, 0.5);
-    --image-shadow: rgba(116, 116, 194, 0.87);
-    --title-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  --lighterBackground: rgb(129, 90, 192);
+  --lightBackground: rgb(98, 71, 170);
+  --mediumBackground: rgb(57, 57, 117);
+  --darkBackground: rgb(37, 50, 90);
+  --fontColor: rgb(244, 237, 250);
+  --downloadButton: #850f62;
+  --downloadButtonHover: #81336a;
+  --mainButtonsHover: rgba(250, 246, 246, 0.5);
+  --image-shadow: rgba(116, 116, 194, 0.87);
+  --title-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .light-mode {
-    --lighterBackground: #f8f7f1;
-    --lightBackground: #ffffff;
-    --mediumBackground: #f0e3dc;
-    --darkBackground: #E8D1C5;
-    --fontColor: #2c3831;
-    --downloadButton: #f0d1bf;
-    --downloadButtonHover: #EDEDE8;
-    --mainButtonsHover: rgba(131, 131, 131, 0.5);
-    --image-shadow: rgba(187, 163, 163, 0.55);
-    --title-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-
+  --lighterBackground: #f8f7f1;
+  --lightBackground: #ffffff;
+  --mediumBackground: #f0e3dc;
+  --darkBackground: #e8d1c5;
+  --fontColor: #2c3831;
+  --downloadButton: #f0d1bf;
+  --downloadButtonHover: #edede8;
+  --mainButtonsHover: rgba(131, 131, 131, 0.5);
+  --image-shadow: rgba(187, 163, 163, 0.55);
+  --title-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 /* -------------------🖤 Common styles 🖤------------------- */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    color: var(--fontColor);
-    transition: all 0.2s;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: var(--fontColor);
+  transition: all 0.2s;
 }
 
 .download,
 .main-button {
-    display: flex;
-    border: none;
-    align-items: center;
+  display: flex;
+  border: none;
+  align-items: center;
 }
 
-.download>i,
-.main-button>i {
-    margin-right: 0.75em;
+.download > i,
+.main-button > i {
+  margin-right: 0.75em;
 }
 
 fieldset {
-    border: none;
+  border: none;
 }
 
 .light-mode-checkbox {
-    display: none;
+  display: none;
 }
 
 .main-title,
-legend{
-    text-shadow: var(--title-shadow);
+legend {
+  text-shadow: var(--title-shadow);
 }
 
 /* -------------------📋 Page styles and organization 📋------------------- */
 
 html,
 body {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 }
 
 body {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
 }
 
 /* -------------------📦 Sections styles 📦------------------- */
 
 .main-section {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .secondary-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    align-content: space-evenly;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  align-content: space-evenly;
 }
 
 .display-section {
-    flex-grow: 10;
+  flex-grow: 10;
 }
 
 /* -------------------🅰️ Header styles 🅰️------------------- */
 
 .main-header {
-    background-color: var(--darkBackground);
-    color: var(--fontColor);
-    flex-grow: 1;
-    padding: 1em;
+  background-color: var(--darkBackground);
+  color: var(--fontColor);
+  flex-grow: 1;
+  padding: 1em;
 }
 
 .main-title {
-    flex-basis: 100%;
-    text-align: center;
-    font-size: 2.5em;
-    font-family: 'Bungee Outline';
-    margin-bottom: 0.2em;
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 2.5em;
+  font-family: "Bungee Outline";
+  margin-bottom: 0.2em;
 }
 
 .main-button {
-    background-color: inherit;
-    margin: 0 1em;
-    padding: 0.5em 0.75em;
-    border-radius: 20px;
-    border: 5px double rgba(0, 0, 0, 0);
-    font-family: inherit;
+  background-color: inherit;
+  margin: 0 1em;
+  padding: 0.5em 0.75em;
+  border-radius: 20px;
+  border: 5px double rgba(0, 0, 0, 0);
+  font-family: inherit;
 }
 
 .main-button:hover,
 .main-button:active,
 .main-button:focus {
-    background-color: var(--lightBackground);
-    border: 5px double var(--mainButtonsHover);
+  background-color: var(--lightBackground);
+  border: 5px double var(--mainButtonsHover);
 }
 
 .main-button-text {
-    font-family: 'Merriweather Sans';
-    font-size: 1rem;
-    font-weight: 400;
+  font-family: "Merriweather Sans";
+  font-size: 1rem;
+  font-weight: 400;
 }
 
-.main-button>i {
-    font-size: 1em;
+.main-button > i {
+  font-size: 1em;
 }
-
 
 /* -------------------👉 Aside styles 👉------------------- */
 
 .aside-section {
-    max-width: 19.58em;
-    min-width: 15rem;
-    flex-grow: 1;
-    font-family: 'Merriweather Sans';
-    height: 100vh;
+  max-width: 19.58em;
+  min-width: 15rem;
+  flex-grow: 1;
+  font-family: "Merriweather Sans";
+  height: 100vh;
 }
 
 .aside-form {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
-    background-color: var(--mediumBackground);
-    padding: 5%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  background-color: var(--mediumBackground);
+  padding: 5%;
 }
 
 .text-form {
-    display: none;
+  display: none;
 }
 
 #close-image,
 #close-text {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.5em;
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5em;
 }
-
 
 /* -------------------📱↔️ Width responsive styles 📱↔️------------------- */
 
 @media (max-width: 1550px) {
-
-    .aside-section {
-        flex-grow: 2;
-    }
+  .aside-section {
+    flex-grow: 2;
+  }
 }
 
 @media (max-width: 1400px) {
-
-    .input {
-        font-size: 70%;
-    }
+  .input {
+    font-size: 70%;
+  }
 }
 
 @media (max-width: 1300px) {
+  .aside-section {
+    font-size: 90%;
+  }
 
-    .aside-section {
-        font-size: 90%;
-    }
+  .aside-section {
+    flex-grow: 4;
+  }
 
-    .aside-section {
-        flex-grow: 4;
-    }
-
-
-    #close-image,
-    #close-text {
-        display: inline-block;
-    }
+  #close-image,
+  #close-text {
+    display: inline-block;
+  }
 }
 
 @media (max-width: 1150px) {
+  .image-in-progress {
+    font-size: 85%;
+  }
 
-    .image-in-progress{
-        font-size: 85%;
-    }
-
-    /* .download{
+  /* .download{
         font-size: 2em;
     } */
 }
 
 @media (max-width: 950px) {
-
-    .image-in-progress{
-        font-size: 70%;
-    }
+  .image-in-progress {
+    font-size: 70%;
+  }
 }
 
-
 @media (max-width: 700px) {
+  .aside-section {
+    display: none;
+    max-width: 100vw;
+  }
 
-    .aside-section {
-        display: none;
-        max-width: 100vw;
-    }
+  .main-section {
+    width: 100vw;
+  }
 
-    .main-section {
-        width: 100vw;
-    }
+  .aside-form {
+    width: 100%;
+  }
 
-    .aside-form{
-        width: 100%;
-    }
-
-    /* .image-in-progress{
+  /* .image-in-progress{
         width: 85%;
     } */
 }
 
-
-
 /* -------------------📱↕️ Height responsive styles 📱↕️------------------- */
 
 @media (max-height: 896px) {
+  .aside-section {
+    font-size: 90%;
+  }
 
-    .aside-section {
-        font-size: 90%;
-    }
+  .aside-form {
+    overflow: scroll;
+  }
 
-    .aside-form{
-        overflow: scroll;
-    }
-
-    .display-section{
-        font-size: 85%;
-    }
+  .display-section {
+    font-size: 85%;
+  }
 }
 
 @media (max-height: 740px) {
+  .aside-section {
+    overflow: scroll;
+    font-size: 90%;
+  }
 
-    .aside-section {
-        overflow: scroll;
-        font-size: 90%;
-    }
+  .display-section {
+    font-size: 70%;
+  }
 
-    .display-section{
-        font-size: 70%;
-    }
+  .main-button-text {
+    font-size: 0.85rem;
+  }
 
-    .main-button-text{
-        font-size: 0.85rem;
-    }
-
-    .main-title{
-        font-size: 2.1em;
-    }
+  .main-title {
+    font-size: 2.1em;
+  }
 }

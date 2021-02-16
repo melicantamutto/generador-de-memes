@@ -1,15 +1,15 @@
-// ------------------------------HTML ELEMENTS------------------------------
+// ------------------------------🗒️ HTML ELEMENTS 🗒️------------------------------
 
 const body = document.getElementById("body");
 
-// ---------------Header elements---------------
+// ---------------🅰️🗒️ Header elements 🅰️🗒️---------------
 
 const imageButton = document.getElementById("image-button");
 const textButton = document.getElementById("text-button");
 const lightModeButton = document.getElementById("light-mode-button");
 const lightModeText = document.getElementById("light-mode-text");
 
-// ---------------Image elements---------------
+// ---------------🖼️🗒️ Image elements 🖼️🗒️---------------
 
 const imageInProgress = document.getElementById("image-in-progress");
 const imageTopText = document.getElementById("image-top-text");
@@ -23,13 +23,13 @@ const imageBottomTextContainer = document.getElementById(
 const imagePerSe = document.getElementById("image-per-se");
 const download = document.getElementById("download");
 
-// ---------------Sections elements---------------
+// ---------------📦🗒️ Sections elements 📦🗒️---------------
 
 const mainSection = document.getElementById("main-section");
 const asideSection = document.getElementById("aside-section");
 const mediaQuery = window.matchMedia("(max-width: 700px)");
 
-// ---------------Image settings elements---------------
+// ---------------🖼️🔧🗒️ Image settings elements 🖼️🔧🗒️---------------
 
 const imageForm = document.getElementById("image-form");
 const closeImage = document.getElementById("close-image");
@@ -43,14 +43,14 @@ const contrast = document.getElementById("contrast");
 const nofocus = document.getElementById("blur");
 const greyScale = document.getElementById("grayscale");
 const sepia = document.getElementById("sepia");
-const hue = document.getElementById("hue-rotation");
+const hue = document.getElementById("hue-rotate");
 const saturation = document.getElementById("saturate");
 const negative = document.getElementById("invert");
 const undoFilters = document.getElementById("undo-filters");
 // testing
 const rangeValues = document.querySelectorAll(".range-filter");
 
-// ---------------Text settings elements---------------
+// ---------------📝🔧🗒️ Text settings elements 📝🔧🗒️---------------
 
 const textForm = document.getElementById("text-form");
 const closeText = document.getElementById("close-text");
@@ -72,7 +72,7 @@ const fontBorderDark = document.getElementById("font-border-dark");
 const fontSpace = document.getElementById("font-space");
 const fontInter = document.getElementById("font-inter");
 
-// ------------------------------ASIDE SETTINGS CODE------------------------------
+// ------------------------------👉 ASIDE SETTINGS CODE 👉------------------------------
 
 const displayAside = (show, hide) => {
   asideSection.style.display = "block";
@@ -94,7 +94,7 @@ textButton.addEventListener("click", (e) => {
   displayAside(textForm, imageForm);
 });
 
-// ------------------------------DARK MODE CODE------------------------------
+// ------------------------------💡 DARK MODE CODE 💡------------------------------
 
 lightModeButton.addEventListener("change", (e) => {
   e.preventDefault();
@@ -107,7 +107,7 @@ lightModeButton.addEventListener("change", (e) => {
   }
 });
 
-// ------------------------------CLOSE BUTTONS CODE------------------------------
+// ------------------------------❎ CLOSE BUTTONS CODE ❎------------------------------
 
 const closeAside = () => {
   asideSection.style.display = "none";
@@ -124,8 +124,7 @@ closeText.addEventListener("click", () => {
   closeAside();
 });
 
-// ------------------------------IMAGE SETTINGS CODE-------------------------
-
+// ------------------------------🖼️🔧 IMAGE SETTINGS CODE 🖼️🔧-------------------------
 
 // ---------------image url---------------
 
@@ -152,7 +151,7 @@ backgroundFilter.addEventListener("change", () => {
 const changeImageFilters = (rangeFilter) => {
   if (rangeFilter.id === "blur") {
     imagePerSe.style.filter = `${rangeFilter.id}(${rangeFilter.value}px)`;
-  } else if (rangeFilter.id === "hue-rotation") {
+  } else if (rangeFilter.id === "hue-rotate") {
     imagePerSe.style.filter = `${rangeFilter.id}(${rangeFilter.value}deg)`;
   } else if (
     rangeFilter.id === "brightness" ||
@@ -189,7 +188,7 @@ undoFilters.addEventListener("click", (e) => {
   }
 });
 
-// ------------------------------TEXT SETTINGS CODE------------------------------
+// ------------------------------📝🔧 TEXT SETTINGS CODE 📝🔧------------------------------
 
 // ---------------text inputs---------------
 
@@ -261,27 +260,24 @@ textAlignRight.addEventListener("click", (e) => {
 
 // ---------------font colors---------------
 
-const changeFontColor = () =>{
+const changeFontColor = () => {
   imageTopText.style.color = `${fontColor.value}`;
   imageBottomText.style.color = `${fontColor.value}`;
-
-}
+};
 
 fontColor.addEventListener("input", (e) => {
   e.preventDefault();
   changeFontColor();
 });
 
-const changeFontBackground = () =>{
+const changeFontBackground = () => {
   imageTopTextContainer.style.backgroundColor = `${fontBackground.value}`;
   imageBottomTextContainer.style.backgroundColor = `${fontBackground.value}`;
-}
-
+};
 
 fontBackground.addEventListener("input", (e) => {
   e.preventDefault();
   changeFontBackground();
-
 });
 
 noFontBackground.addEventListener("change", (e) => {
@@ -292,6 +288,7 @@ noFontBackground.addEventListener("change", (e) => {
     imageTopTextContainer.style.position = "absolute";
     imageTopTextContainer.style.top = "0";
     imageTopTextContainer.style.left = "0";
+    imageTopTextContainer.style.zIndex = "99999";
     imageBottomTextContainer.style.position = "absolute";
     imageBottomTextContainer.style.bottom = "0";
     imageBottomTextContainer.style.left = "0";
@@ -329,7 +326,7 @@ fontBorderDark.addEventListener("click", () => {
 // ---------------font spacing---------------
 
 fontSpace.addEventListener("input", () => {
-  console.log(fontSpace.value)
+  console.log(fontSpace.value);
   imageTopTextContainer.style.paddingTop = `${fontSpace.value}px`;
   imageTopTextContainer.style.paddingBottom = `${fontSpace.value}px`;
   imageBottomTextContainer.style.paddingTop = `${fontSpace.value}px`;
@@ -345,7 +342,7 @@ fontInter.addEventListener("change", () => {
   }`;
 });
 
-// ------------------------------DOWNLOAD BUTTON CODE------------------------------
+// ------------------------------⬇️ DOWNLOAD BUTTON CODE ⬇️------------------------------
 
 download.addEventListener("click", () => {
   domtoimage.toBlob(imageInProgress).then(function (blob) {

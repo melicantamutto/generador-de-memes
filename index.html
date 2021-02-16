@@ -1,276 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- -------------------Primary Meta Tags------------------- -->
 
-    <meta name="title" content="Generador de Memes">
-    <meta name="description" content="App online para crear tus propios memes">
+    <meta name="title" content="Generador de Memes" />
+    <meta
+      name="description"
+      content="App online para crear tus propios memes"
+    />
     <meta name="author" content="Melina Lucía Cantamutto" />
-    <meta name="keywords" content="Melina Cantamutto, generador de memes, frontend, crear memes, generador, memes" />
+    <meta
+      name="keywords"
+      content="Melina Cantamutto, generador de memes, frontend, crear memes, generador, memes"
+    />
 
     <!-- -------------------Open Graph------------------- -->
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://modest-gates-9c9fda.netlify.app/">
-    <meta property="og:title" content="Generador de memes">
-    <meta property="og:description" content="App online para crear tus propios memes">
-    <meta property="og:image"
-        content="https://raw.githubusercontent.com/melicantamutto/generador-de-memes/master/images/meta-image.png">
-    <meta property="og:site_name" content="Generador de memes">
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://modest-gates-9c9fda.netlify.app/"
+    />
+    <meta property="og:title" content="Generador de memes" />
+    <meta
+      property="og:description"
+      content="App online para crear tus propios memes"
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/melicantamutto/generador-de-memes/master/images/meta-image.png"
+    />
+    <meta property="og:site_name" content="Generador de memes" />
 
     <!-- -------------------Twitter------------------- -->
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://modest-gates-9c9fda.netlify.app/">
-    <meta property="twitter:title" content="Generador de memes">
-    <meta property="twitter:description" content="App online para crear tus propios memes">
-    <meta property="twitter:image"
-        content="https://raw.githubusercontent.com/melicantamutto/generador-de-memes/master/images/meta-image.png">
-    <meta name="twitter:image:alt" content="Meme Generator's main page">
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://modest-gates-9c9fda.netlify.app/"
+    />
+    <meta property="twitter:title" content="Generador de memes" />
+    <meta
+      property="twitter:description"
+      content="App online para crear tus propios memes"
+    />
+    <meta
+      property="twitter:image"
+      content="https://raw.githubusercontent.com/melicantamutto/generador-de-memes/master/images/meta-image.png"
+    />
+    <meta name="twitter:image:alt" content="Meme Generator's main page" />
 
     <!-- -------------------Favicon------------------- -->
 
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
 
     <!-- -------------------Used fonts------------------- -->
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Outline&family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Outline&family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- -------------------Link CSS------------------- -->
 
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="./styles/image.css">
-    <link rel="stylesheet" href="./styles/aside.css">
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/image.css" />
+    <link rel="stylesheet" href="./styles/aside.css" />
 
     <!-- -------------------Title------------------- -->
 
     <title>Generador de memes</title>
-</head>
+  </head>
 
-<body id="body">
+  <body id="body">
     <section class="main-section display-section" id="main-section">
 
-        <!-- -------------------🅰️ HEADER 🅰️------------------- -->
+      <!-- -------------------🅰️ HEADER 🅰️------------------- -->
 
-        <header class="secondary-section main-header">
-            <h1 class="main-title">Generador de Memes</h1>
-            <button class="main-button" id="image-button" aria-label="Imagen">
-                <i class="far fa-file-image" aria-hidden="true"></i>
-                <p class="main-button-text" aria-hidden="true">Imagen</p>
-            </button>
-            <button class="main-button" id="text-button" aria-label="Texto">
-                <i class="fas fa-font" aria-hidden="true"></i>
-                <p class="main-button-text" aria-hidden="true">Texto</p>
-            </button>
-            <section class="main-button-container">
-                <input type="checkbox" name="light-mode-button" class="light-mode-checkbox" id="light-mode-button"
-                    checked="checked">
-                <label for="light-mode-button" class="main-button">
-                    <i class="far fa-lightbulb"  aria-hidden="true"></i>
-                    <p class="main-button-text" id="light-mode-text">Modo claro</p>
-                </label>
-            </section>
-        </header>
+      <header class="secondary-section main-header">
+        <h1 class="main-title">Generador de Memes</h1>
+        <button class="main-button" id="image-button" aria-label="Imagen">
+          <i class="far fa-file-image" aria-hidden="true"></i>
+          <p class="main-button-text" aria-hidden="true">Imagen</p>
+        </button>
+        <button class="main-button" id="text-button" aria-label="Texto">
+          <i class="fas fa-font" aria-hidden="true"></i>
+          <p class="main-button-text" aria-hidden="true">Texto</p>
+        </button>
+        <section class="main-button-container">
+          <input
+            type="checkbox"
+            name="light-mode-button"
+            class="light-mode-checkbox"
+            id="light-mode-button"
+            checked="checked"
+          />
+          <label for="light-mode-button" class="main-button">
+            <i class="far fa-lightbulb" aria-hidden="true"></i>
+            <p class="main-button-text" id="light-mode-text">Modo claro</p>
+          </label>
+        </section>
+      </header>
 
-        <!-- -------------------🖼️ IMAGE 🖼️------------------- -->
+      <!-- -------------------🖼️ IMAGE 🖼️------------------- -->
 
-        <main class="secondary-section main-main">
-            <section class="image-in-progress" id="image-in-progress">
-                <article class="image-section image-text-container" id="image-top-text-container">
-                    <h2 class="image-text" id="image-top-text">TOP TEXT</h2>
-                </article>
-                <article class="image-section image-per-se" id="image-per-se"></article>
-                <article class="image-section image-text-container" id="image-bottom-text-container">
-                    <h2 class="image-text" id="image-bottom-text">BOTTOM TEXT</h2>
-                </article>
-            </section>
+      <main class="secondary-section main-main">
+        <section class="image-in-progress" id="image-in-progress">
+          <article
+            class="image-section image-text-container"
+            id="image-top-text-container"
+          >
+            <h2 class="image-text" id="image-top-text">TOP TEXT</h2>
+          </article>
+          <article
+            class="image-section image-per-se"
+            id="image-per-se"
+          ></article>
+          <article
+            class="image-section image-text-container"
+            id="image-bottom-text-container"
+          >
+            <h2 class="image-text" id="image-bottom-text">BOTTOM TEXT</h2>
+          </article>
+        </section>
 
-            <!-- -------------------⬇️ DOWNLOAD BUTTON ⬇️------------------- -->
+        <!-- -------------------⬇️ DOWNLOAD BUTTON ⬇️------------------- -->
 
-            <button class="download" id="download"  aria-label="Descargar meme">
-                <i class="fas fa-download" aria-hidden="true"></i>
-                <p class="download-text"  aria-hidden="true">Descargar meme</p>
-            </button>
-        </main>
+        <button class="download" id="download" aria-label="Descargar meme">
+          <i class="fas fa-download" aria-hidden="true"></i>
+          <p class="download-text" aria-hidden="true">Descargar meme</p>
+        </button>
+      </main>
     </section>
 
     <!-- -------------------👉 ASIDE 👉------------------- -->
 
     <aside class="main-section aside-section" id="aside-section">
+      <!-- -------------------🖼️🔧 IMAGE SETTINGS 🖼️🔧------------------- -->
 
-        <!-- -------------------🖼️🔧 IMAGE SETTINGS 🖼️🔧------------------- -->
+      <form id="image-form" class="aside-form image-form">
+        <i
+          class="far fa-times-circle close-form-icon"
+          id="close-image"
+          aria-label="Close image settings"
+        ></i>
+        <fieldset class="aside-form-container">
+          <legend>IMAGEN</legend>
+          <article class="input-container">
+            <label class="aside-subtitle" for="image-url">URL</label>
+            <input type="text" id="image-url" aria-label="URL de la imagen" />
+          </article>
+          <article class="input-container">
+            <label class="input-name aside-subtitle" for="image-background"
+              >Fondo</label
+            >
+            <input
+              type="color"
+              class="image-background"
+              id="image-background"
+              aria-label="Color de fondo"
+            />
+            <select
+              name="background-filter"
+              class="background-filter"
+              id="background-filter"
+              aria-label="Filtro de color"
+            >
+              <option value="unset">Ninguno</option>
+              <option value="lighten">Aclarar</option>
+              <option value="darken">Oscurecer</option>
+              <option value="difference">Diferencia</option>
+              <option value="luminosity">Luminosidad</option>
+              <option value="multiply">Multiplicar</option>
+            </select>
+          </article>
+          <section class="range-inputs">
+            <p class="aside-subtitle">Filtros</p>
+            <article class="input-container">
+              <label class="range-name" for="brightness">Brillo</label>
+              <input
+                type="range"
+                class="range-filter"
+                id="brightness"
+                max="1"
+                min="0"
+                step="0.1"
+                value="1"
+                aria-label="Brillo"
+              />
+              <!-- max="3" ideal -->
+            </article>
+            <article class="input-container">
+              <label class="range-name" for="opacity">Opacidad</label>
+              <input
+                type="range"
+                class="range-filter"
+                id="opacity"
+                max="1"
+                min="0"
+                step="0.1"
+                value="1"
+                aria-label="Opacidad"
+              />
+            </article>
+            <article class="input-container">
+              <label class="range-name" for="contrast">Contraste</label>
+              <input
+                type="range"
+                class="range-filter"
+                id="contrast"
+                max="1000"
+                min="100"
+                step="1"
+                value="100"
+                aria-label="Contraste"
+              />
+              <!-- max="500" min="0" ideal -->
+            </article>
+            <article class="input-container">
+              <label class="range-name" for="blur">Desenfoque</label>
+              <input
+                type="range"
+                class="range-filter"
+                id="blur"
+                max="10"
+                min="0"
+                step="0.1"
+                value="0"
+                aria-label="Desenfoque"
+              />
+            </article>
+            <article class="input-container">
+              <label class="range-name" for="grayscale">Escala de grises</label>
+              <input
+                type="range"
+                class="range-filter"
+                id="grayscale"
+                max="100"
+                min="0"
+                step="1"
+                value="0"
+                aria-label="Escala de grises"
+              />
+            </article>
+            <article class="input-container">
+              <label class="range-name" for="sepia">Sepia</label>
+              <input
+                type="range"
+                class="range-filter"
+                id="sepia"
+                max="100"
+                min="0"
+                step="1"
+                value="0"
+                aria-label="Sepia"
+              />
+            </article>
+            <article class="input-container">
+              <label class="range-name" for="hue-rotate">HUE</label>
+              <input
+                type="range"
+                class="range-filter"
+                id="hue-rotate"
+                max="359"
+                min="0"
+                step="1"
+                value="0"
+                aria-label="HUE"
+              />
+            </article>
+            <article class="input-container">
+              <label class="range-name" for="saturate">Saturación</label>
+              <input
+                type="range"
+                class="range-filter"
+                id="saturate"
+                max="1000"
+                min="100"
+                stepontName.addEv="10"
+                value="100"
+                aria-label="Saturación"
+              />
+              <!-- min="0" ideal -->
+            </article>
+            <article class="input-container">
+              <label class="range-name" for="invert">Negativo</label>
+              <input
+                type="range"
+                class="range-filter"
+                id="invert"
+                max="1"
+                min="0"
+                step="0.1"
+                value="0"
+                aria-label="Negativo"
+              />
+            </article>
+            <button
+              class="undo-filters"
+              id="undo-filters"
+              type="button"
+              aria-label="Reestablecer filtros"
+            >
+              Restablecer filtros
+            </button>
+          </section>
+        </fieldset>
+      </form>
 
-        <form action="" id="image-form" class="aside-form image-form">
-            <i class="far fa-times-circle close-form-icon" id="close-image" aria-hidden="true"></i>
-            <fieldset class="aside-form-container">
-                <legend>IMAGEN</legend>
-                <article class="input-container">
-                    <label class="aside-subtitle" for="image-url">URL</label>
-                    <input type="text" id="image-url" aria-label="URL de la imagen">
-                </article>
-                <article class="input-container">
-                    <label class="input-name aside-subtitle" for="image-background">Fondo</label>
-                    <input type="color" class="image-background" id="image-background" aria-label="Color de fondo">
-                    <!-- <label class="input-name" for="background-filter" aria-hidden="true"></label> -->
-                    <select name="background-filter" class="background-filter" id="background-filter" aria-label="Filtro de color">
-                        <option value="unset">Ninguno</option>
-                        <option value="lighten">Aclarar</option>
-                        <option value="darken">Oscurecer</option>
-                        <option value="difference">Diferencia</option>
-                        <option value="luminosity">Luminosidad</option>
-                        <option value="multiply">Multiplicar</option>
-                    </select>
-                </article>
-                <section class="range-inputs">
-                    <p class="aside-subtitle">Filtros</p>
-                    <article class="input-container">
-                        <label class="range-name" for="brightness">Brillo</label>
-                        <input type="range" class="range-filter" id="brightness" max="1" min="0" step="0.1" value="1" aria-label="Brillo">
-                        <!-- max="3" ideal -->
-                    </article>
-                    <article class="input-container">
-                        <label class="range-name" for="opacity">Opacidad</label>
-                        <input type="range" class="range-filter" id="opacity" max="1" min="0" step="0.1" value="1" aria-label="Opacidad">
-                    </article>
-                    <article class="input-container">
-                        <label class="range-name" for="contrast">Contraste</label>
-                        <input type="range" class="range-filter" id="contrast" max="1000" min="100" step="1"
-                            value="100" aria-label="Contraste">
-                        <!-- max="500" min="0" ideal -->
-                    </article>
-                    <article class="input-container">
-                        <label class="range-name" for="blur">Desenfoque</label>
-                        <input type="range" class="range-filter" id="blur" max="10" min="0" step="0.1" value="0" aria-label="Desenfoque">
-                    </article>
-                    <article class="input-container">
-                        <label class="range-name" for="grayscale">Escala de grises</label>
-                        <input type="range" class="range-filter" id="grayscale" max="100" min="0" step="1" value="0" aria-label="Escala de grises">
-                    </article>
-                    <article class="input-container">
-                        <label class="range-name" for="sepia">Sepia</label>
-                        <input type="range" class="range-filter" id="sepia" max="100" min="0" step="1" value="0" aria-label="Sepia">
-                    </article>
-                    <article class="input-container">
-                        <label class="range-name" for="hue-rotation">HUE</label>
-                        <input type="range" class="range-filter" id="hue-rotation" max="359" min="0" step="1" value="0" aria-label="HUE">
-                    </article>
-                    <article class="input-container">
-                        <label class="range-name" for="saturate">Saturación</label>
-                        <input type="range" class="range-filter" id="saturate" max="1000" min="100"
-                            stepontName.addEv="10" value="100" aria-label="Saturación">
-                        <!-- min="0" ideal -->
-                    </article>
-                    <article class="input-container">
-                        <label class="range-name" for="invert">Negativo</label>
-                        <input type="range" class="range-filter" id="invert" max="1" min="0" step="0.1" value="0" aria-label="Negativo">
-                    </article>
-                    <button class="undo-filters" id="undo-filters" type="button" aria-label="Reestablecer filtros">Restablecer
-                        filtros</button>
-                </section>
+      <!-- -------------------📝🔧 TEXT SETTINGS 📝🔧------------------- -->
 
-            </fieldset>
-        </form>
-
-        <!-- -------------------📝🔧 TEXT SETTINGS 📝🔧------------------- -->
-
-        <form action="" id="text-form" class="aside-form text-form hide">
-            <i class="far fa-times-circle close-form-icon" id="close-text" aria-hidden="true"></i>
-            <fieldset class="aside-form-container">
-                <legend>TEXTO</legend>
-                <article class="input-container">
-                    <label class="aside-subtitle" for="input-top-text">Superior</label>
-                    <input type="text" id="input-top-text" value="TOP TEXT" aria-label="Texto superior">
-                </article>
-                <article class="input-container complementary-option">
-                    <input type="checkbox" id="with-top-text">
-                    <label class="input-name" for="with-top-text" aria-label="Sin texto superior">Sin texto superior</label>
-                </article>
-                <article class="input-container">
-                    <label class="aside-subtitle" for="input-bottom-text">Inferior</label>
-                    <input type="text" id="input-bottom-text" value="BOTTOM TEXT" aria-label="Texto inferior">
-                </article>
-                <article class="input-container complementary-option">
-                    <input type="checkbox" id="with-bottom-text">
-                    <label class="input-name" for="with-bottom-text" aria-label="Sin texto inferior">Sin texto inferior</label>
-                </article>
-                <section class="font-inputs">
-                    <article class="input-container">
-                        <label class="aside-subtitle" for="font-name">Fuente</label>
-                        <select name="fontName" id="font-name" aria-label="Fuente">
-                            <option value="Arial">Arial</option>
-                            <option value="Arial Black">Arial Black</option>
-                            <option value="American Typewriter">American Typewriter</option>
-                            <option value="Andale Mono">Andale Mono</option>
-                            <option value="Bebas Neue" selected="selected" aria-selected="true">Bebas Neue</option>
-                            <option value="Comic Sans MS">Comic Sans MS</option>
-                            <option value="Helvetica">Helvética</option>
-                            <option value="Impact">Impact</option>
-                            <option value="Verdana">Verdana</option>
-                            <option value="Times New Roman">Times New Roman</option>
-                        </select>
-                    </article>
-                    <article class="input-container">
-                        <!-- <label class="input-name" for="font-size" aria-hidden="true"></label> -->
-                        <input type="number" id="font-size" aria-label="Tamaño de la fuente">
-                    </article>
-                    <button type="button" class="text-align-button" id="text-align-left" aria-label="Texto alineado a la izquierda">
-                        <i class="fas fa-align-left" aria-hidden="true"></i>
-                    </button>
-                    <button type="button" class="text-align-button" id="text-align-center" aria-label="Texto alineado al centro">
-                        <i class="fas fa-align-center" aria-hidden="true"></i>
-                    </button>
-                    <button type="button" class="text-align-button" id="text-align-right" aria-label="Texto alineado a la derecha">
-                        <i class="fas fa-align-right" aria-hidden="true"></i>
-                    </button>
-                </section>
-                <section class="font-color-inputs">
-                    <article class="input-container">
-                        <label class="aside-subtitle" for="font-color">Color</label>
-                        <input type="color" id="font-color" value="#000000" aria-label="Color del texto">
-                    </article>
-                    <article class="input-container">
-                        <label class="aside-subtitle" for="font-background">Fondo</label>
-                        <input type="color" id="font-background" value="#FFFFFF" aria-label="Color del fondo del texto">
-                    </article>
-                    <article class="input-container complementary-option">
-                        <input type="checkbox" id="no-font-background" aria-label="Fondo del texto transparente">
-                        <label class="input-name" for="no-font-background">Fondo transparente</label>
-                    </article>
-                </section>
-                <article class="input-container font-shadow-buttons">
-                    <p class="aside-subtitle">Contorno</p>
-                    <button type="button" class="font-shadow-button" id="font-border-none" aria-label="Letras sin borde">Ninguno</button>
-                    <button type="button" class="font-shadow-button" id="font-border-light" aria-label="Letras con borde claro">Claro</button>
-                    <button type="button" class="font-shadow-button" id="font-border-dark" aria-label="Letras con borde oscuro">Oscuro</button>
-                </article>
-                <article class="input-container">
-                    <label class="aside-subtitle" for="font-space">Espaciado</label>
-                    <input type="number" id="font-space" value="30" aria-label="Espaciado">
-                </article>
-                <article class="input-container">
-                    <label class="aside-subtitle" for="font-inter">Interlineado</label>
-                    <select name="fontInter" id="font-inter" aria-label="Interlineado">
-                        <option value="0.8">0.8</option>
-                        <option value="1">1</option>
-                        <option value="1.2">1.2</option>
-                        <option value="1.5">1.5</option>
-                        <option value="2">2</option>
-                        <option value="2.5">2.5</option>
-                    </select>
-                </article>
-            </fieldset>
-        </form>
+      <form action="" id="text-form" class="aside-form text-form hide">
+        <i
+          class="far fa-times-circle close-form-icon"
+          id="close-text"
+          aria-label="Close text settings"
+        ></i>
+        <fieldset class="aside-form-container">
+          <legend>TEXTO</legend>
+          <article class="input-container">
+            <label class="aside-subtitle" for="input-top-text">Superior</label>
+            <input
+              type="text"
+              id="input-top-text"
+              value="TOP TEXT"
+              aria-label="Texto superior"
+            />
+          </article>
+          <article class="input-container complementary-option">
+            <input type="checkbox" id="with-top-text" />
+            <label
+              class="input-name"
+              for="with-top-text"
+              aria-label="Sin texto superior"
+              >Sin texto superior</label
+            >
+          </article>
+          <article class="input-container">
+            <label class="aside-subtitle" for="input-bottom-text"
+              >Inferior</label
+            >
+            <input
+              type="text"
+              id="input-bottom-text"
+              value="BOTTOM TEXT"
+              aria-label="Texto inferior"
+            />
+          </article>
+          <article class="input-container complementary-option">
+            <input type="checkbox" id="with-bottom-text" />
+            <label
+              class="input-name"
+              for="with-bottom-text"
+              aria-label="Sin texto inferior"
+              >Sin texto inferior</label
+            >
+          </article>
+          <section class="font-inputs">
+            <article class="input-container">
+              <label class="aside-subtitle" for="font-name">Fuente</label>
+              <select name="fontName" id="font-name" aria-label="Fuente">
+                <option value="Arial">Arial</option>
+                <option value="Arial Black">Arial Black</option>
+                <option value="American Typewriter">American Typewriter</option>
+                <option value="Andale Mono">Andale Mono</option>
+                <option
+                  value="Bebas Neue"
+                  selected="selected"
+                  aria-selected="true"
+                >
+                  Bebas Neue
+                </option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Helvetica">Helvética</option>
+                <option value="Impact">Impact</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Times New Roman">Times New Roman</option>
+              </select>
+            </article>
+            <article class="input-container">
+              <input
+                type="number"
+                id="font-size"
+                aria-label="Tamaño de la fuente"
+              />
+            </article>
+            <button
+              type="button"
+              class="text-align-button"
+              id="text-align-left"
+              aria-label="Texto alineado a la izquierda"
+            >
+              <i class="fas fa-align-left" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="text-align-button"
+              id="text-align-center"
+              aria-label="Texto alineado al centro"
+            >
+              <i class="fas fa-align-center" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="text-align-button"
+              id="text-align-right"
+              aria-label="Texto alineado a la derecha"
+            >
+              <i class="fas fa-align-right" aria-hidden="true"></i>
+            </button>
+          </section>
+          <section class="font-color-inputs">
+            <article class="input-container">
+              <label class="aside-subtitle" for="font-color">Color</label>
+              <input
+                type="color"
+                id="font-color"
+                value="#000000"
+                aria-label="Color del texto"
+              />
+            </article>
+            <article class="input-container">
+              <label class="aside-subtitle" for="font-background">Fondo</label>
+              <input
+                type="color"
+                id="font-background"
+                value="#FFFFFF"
+                aria-label="Color del fondo del texto"
+              />
+            </article>
+            <article class="input-container complementary-option">
+              <input
+                type="checkbox"
+                id="no-font-background"
+                aria-label="Fondo del texto transparente"
+              />
+              <label class="input-name" for="no-font-background"
+                >Fondo transparente</label
+              >
+            </article>
+          </section>
+          <article class="input-container font-shadow-buttons">
+            <p class="aside-subtitle">Contorno</p>
+            <button
+              type="button"
+              class="font-shadow-button"
+              id="font-border-none"
+              aria-label="Letras sin borde"
+            >
+              Ninguno
+            </button>
+            <button
+              type="button"
+              class="font-shadow-button"
+              id="font-border-light"
+              aria-label="Letras con borde claro"
+            >
+              Claro
+            </button>
+            <button
+              type="button"
+              class="font-shadow-button"
+              id="font-border-dark"
+              aria-label="Letras con borde oscuro"
+            >
+              Oscuro
+            </button>
+          </article>
+          <article class="input-container">
+            <label class="aside-subtitle" for="font-space">Espaciado</label>
+            <input
+              type="number"
+              id="font-space"
+              value="30"
+              aria-label="Espaciado"
+            />
+          </article>
+          <article class="input-container">
+            <label class="aside-subtitle" for="font-inter">Interlineado</label>
+            <select name="fontInter" id="font-inter" aria-label="Interlineado">
+              <option value="0.8">0.8</option>
+              <option value="1">1</option>
+              <option value="1.2">1.2</option>
+              <option value="1.5">1.5</option>
+              <option value="2">2</option>
+              <option value="2.5">2.5</option>
+            </select>
+          </article>
+        </fieldset>
+      </form>
     </aside>
 
     <!-- -------------------Script iconos------------------- -->
 
-    <script src="https://kit.fontawesome.com/a484224e5b.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/a484224e5b.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- -------------------App script------------------- -->
 
@@ -278,12 +507,15 @@
 
     <!-- -------------------Download scripts------------------- -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
-        integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"
-        integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw=="
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+      integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"
+      integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw=="
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
