@@ -242,6 +242,22 @@ body {
     } */
 }
 
+@media (max-width: 445px) {
+  .image-in-progress {
+    font-size: 65%;
+  }
+}
+
+@media (max-width: 310px) {
+  body {
+    font-size: 85%;
+  }
+
+  .main-button-text {
+    font-size: 0.7rem;
+  }
+}
+
 /* -------------------📱↕️ Height responsive styles 📱↕️------------------- */
 
 @media (max-height: 896px) {
